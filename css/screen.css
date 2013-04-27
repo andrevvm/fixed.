@@ -48,7 +48,7 @@ body, html {
 
 .title h1 {
   margin: 0;
-  font-size: 32px;
+  font-size: 64px;
 }
 
 .title h2 {
@@ -292,7 +292,7 @@ nav a:hover {
   }
 
   .title {
-    min-height: 50%;
+    height: 50%;
     padding: 0;
   }
 
