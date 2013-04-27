@@ -258,6 +258,7 @@ nav a:hover {
   height: 100px;
   position: relative;
   top: 100px;
+  opacity: 0.9;
 }
 
 .video iframe {
