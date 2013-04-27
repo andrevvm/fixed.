@@ -111,8 +111,12 @@ nav a:hover {
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-
+@media only screen and (max-device-width: 320px) {
+  .post {
+    margin: 0 auto;
+    max-width: 320px;
+    height: 640px;
+  }
 }
 
 @media print,
