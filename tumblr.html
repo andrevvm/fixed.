@@ -57,8 +57,8 @@
                 </div>
                 {/block:Video}
                 {block:Audio}
-                <div class="audio post-bg">
-                    {block:AlbumArt}<img src="{AlbumArtURL}" alt="">{/block:AlbumArt}
+                <div class="audio post-bg" style="background-image: url({block:AlbumArt}{AlbumArtURL}{/block:AlbumArt})">
+                    
                     {AudioPlayerBlack}
                     {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
                 </div>
@@ -109,16 +109,17 @@
                     {Answer}
                 </div>
                 {/block:Answer}
-                {block:IndexPage}<p><a href="{Permalink}" class="permalink">{lang:Permalink}</a></p>{/block:IndexPage}
                 <div class="arrow-up"></div>
             </article>
             <div class="meta">
                 <ul>
                     <li>
-                        {block:Date}
-                        {block:NewDayDate}<p>{ShortMonth} {DayOfMonth}</p>{/block:NewDayDate}
-                        {block:SameDayDate}<p>{ShortMonth} {DayOfMonth}</p>{/block:SameDayDate}
-                        {/block:Date}
+                        {block:IndexPage}<a href="{Permalink}" class="permalink">{/block:IndexPage}
+                            {block:Date}
+                            {block:NewDayDate}<p>{ShortMonth} {DayOfMonth}</p>{/block:NewDayDate}
+                            {block:SameDayDate}<p>{ShortMonth} {DayOfMonth}</p>{/block:SameDayDate}
+                            {/block:Date}
+                        {block:IndexPage}</a>{/block:IndexPage}
                     </li>
                     {block:PostNotes} 
                     <li><span aria-hidden="true" class="icon-heart"> {PostNotes}</span></li>
