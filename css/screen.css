@@ -52,7 +52,9 @@ body, html {
 }
 
 .title h2 {
+  margin-top: 10px;
   font-size: 24px;
+  font-weight: normal;
   color: rgba(255,255,255,0.75);
 }
 
