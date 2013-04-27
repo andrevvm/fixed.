@@ -233,6 +233,12 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.text {
+  width: 60%;
+  min-width: 700px;
+  margin: 50px auto;
+}
+
 .conversation {
   margin: 0 auto;
   padding: 0;
