@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html lang="{block:English}en{/block:English}{block:French}fr{/block:French}{block:German}de{/block:German}{block:Japanese}ja{/block:Japanese}{block:Italian}it{/block:Italian}{block:Spanish}es{/block:Spanish}{block:Polish}pl{/block:Polish}">
+<head>
     <head>
         <meta charset="utf-8">
-        <title></title>
-        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width">
+        <meta charset="utf-8">
+        <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
+        {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/screen.css">
+        <link rel="apple-touch-icon" href="{PortraitURL-128}">
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+        <link rel="stylesheet" href="http://andrevvm.github.io/fixed./css/normalize.min.css">
+        <link rel="stylesheet" href="http://andrevvm.github.io/fixed./css/screen.css">
         <!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
 
         <!--[if lt IE 9]>
@@ -19,20 +26,111 @@
 
         <div class="container">
             <div class="title">
-                <h1>Fixed.</h1>
+                <h1><a href="/">{Title}</a></h1>
             </div>
-            <div class="post" style="background-image:url(img/tumblr_mkp9zgyd4D1qldtg6o1_1280.jpg)">
-                <p class="caption"><span>Cool!</span></p>
+            {block:Posts}
+            <article class="post {TagsAsClasses}">
+                {block:Text}
+                <div class="text">
+                    {block:Title}<h3>{Title}</h3>{/block:Title}
+                    {Body}
+                </div>
+                {/block:Text}
+                {block:Quote}
+                <div class="quote">
+                    <blockquote class="words {Length}">&#8220;{Quote}&#8221;</blockquote>
+                    {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
+                </div>
+                {/block:Quote}
+                {block:Link}
+                <div class="link">
+                    <h3><a href="{URL}" {Target}>{Name}</a></h3>
+                    {block:Description}<div class="caption">{Description}</div>{/block:Description}
+                </div>
+                {/block:Link}
+                {block:Video}
+                <div class="video">
+                    {Video-500}
+                    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                </div>
+                {/block:Video}
+                {block:Audio}
+                <div class="audio">
+                    {block:AlbumArt}<img src="{AlbumArtURL}" alt="">{/block:AlbumArt}
+                    {AudioPlayerBlack}
+                    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                </div>
+                {/block:Audio}
+                {block:Photo}
+                <div class="photo post-bg" style="background-image:url({PhotoURL-HighRes})">
+                        {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                        {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                </div>
+                {/block:Photo}
+                {block:Photoset}
+                <div class="photoset">
+                    {block:Photos}
+                        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                        {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                    {/block:Photos}
+                    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                </div>
+                {/block:Photoset}
+
+                {block:Panorama}
+                <div class="panorama">
+                    {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
+                    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                </div>
+                {/block:Panorama}
+
+                {block:Chat}
+                <div class="chat">
+                    {block:Title}<h3>{Title}</h3>{/block:Title}
+                    <ul class="conversation">
+                        {block:Lines}
+                        <li class="line {Alt}">
+                            {block:Label}<span class="person">{Label}</span>{/block:Label}
+                            <span class="person-said">{Line}</span>
+                        </li>
+                        {/block:Lines}
+                    </ul>
+                </div>
+                {/block:Chat}
+                {block:Answer}
+                <div class="answer">
+                    <img src="{AskerPortraitURL-40}">
+                    {Asker}
+                    {Question}
+                    {Answer}
+                </div>
+                {/block:Answer}
+                {block:IndexPage}<p><a href="{Permalink}" class="permalink">{lang:Permalink}</a></p>{/block:IndexPage}
                 <div class="arrow-up"></div>
-            </div>
+            </article>
             <div class="meta">
                 <ul>
-                    <li>Apr 25</li>
-                    <li><span aria-hidden="true" class="icon-heart"> 0</span></li>
+                    <li>
+                        {block:Date}
+                        {block:NewDayDate}<p>{ShortMonth} {DayOfMonth}</p>{/block:NewDayDate}
+                        {block:SameDayDate}<p>{ShortMonth} {DayOfMonth}</p>{/block:SameDayDate}
+                        {/block:Date}
+                    </li>
+                    {block:PostNotes} 
+                    <li><span aria-hidden="true" class="icon-heart"> {PostNotes}</span></li>
+                    {/block:PostNotes} 
                     <li><span aria-hidden="true" class="icon-bubble"> 0</span></li>
                 </ul>
-                
             </div>
+            {/block:Posts}
+
+                <div class="post-bg" style="background-image:url(img/tumblr_mkp9zgyd4D1qldtg6o1_1280.jpg)">
+                    <p class="caption"><span>Cool!</span></p>
+                    <div class="arrow-up"></div>
+                </div>
+                
+
+
             <div class="post" style="background-image:url(img/tumblr_mkcbp5AXWb1s00c0uo1_1280.jpg)">
                 <p class="caption"><span>Cool!</span></p>
                 <div class="arrow-up"></div>

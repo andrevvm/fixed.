@@ -24,11 +24,16 @@ body, html {
   width: 100%;
   height: 480px;
   margin: 0 auto;
+  position: relative;
+}
+
+.post-bg {
+  width: 100%;
+  height: 100%;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  position: relative;
 }
 
 .title {
@@ -159,6 +164,9 @@ nav a:hover {
     max-width: 1500px;
     width: 100%;
     height: 100%;
+  }
+
+  .post-bg {
     background-size: cover;
     background-attachment: fixed;
   }
