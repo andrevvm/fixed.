@@ -337,7 +337,7 @@ nav a:hover {
 
   .video .soundcloud_audio_player {
     width: 80%;
-    height: auto;
+    height: 165px;
     top: 40%;
   }  
 }
