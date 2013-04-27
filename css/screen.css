@@ -56,8 +56,13 @@ body, html {
   text-decoration: none;
 }
 
+.title a:hover {
+  text-decoration: underline;
+}
+
 a {
-  text-decoration: none;
+  color: #FFF;
+  text-decoration: underline;
 }
 
 .arrow-up {
