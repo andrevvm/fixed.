@@ -105,6 +105,10 @@ a {
   text-align: center;
 }
 
+.caption p {
+  margin: 0;
+}
+
 .caption span {
   display: inline-block;
   padding: 10px 15px;
@@ -115,14 +119,23 @@ a {
   background: #00D9A3;
 }
 
+.post .quote .quote-text {
+  text-align: center;
+  position: relative;
+  top: 35%;
+}
+
 .post .quote blockquote {
   margin: 0;
-  position: relative;
-  top: 40%;
-  text-align: center;
   font-size: 32px;
   font-weight: bold;
   color: white;
+}
+
+.post .quote .source {
+  color: #FFF;
+  opacity: 0.8;
+  font-size: 24px;
 }
 
 nav {
