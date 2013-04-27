@@ -323,6 +323,7 @@ nav a:hover {
   .video iframe {
     display: block;
     width: 700px;
+    height: auto;
     min-width: 700px;
     margin: 0 auto;
     position: relative;
