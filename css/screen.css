@@ -8,11 +8,10 @@ body, html {
 }
 
 .post {
+  max-width: 320px;
+  height: 640px;
   margin: 0 auto;
-  max-width: 1500px;
-  width: 100%;
-  height: 100%;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -44,7 +43,7 @@ body, html {
   position: absolute;
   left: 50%;
   margin-left: -20px;
-  bottom: 0px;
+  bottom: -1px;
 }
 
 .meta {
@@ -111,11 +110,11 @@ nav a:hover {
    Media Queries
    ========================================================================== */
 
-@media only screen and (max-device-width: 320px) {
+@media only screen and (min-width: 320px) {
   .post {
-    margin: 0 auto;
-    max-width: 320px;
-    height: 640px;
+    max-width: 1500px;
+    width: 100%;
+    height: 100%;
   }
 }
 
