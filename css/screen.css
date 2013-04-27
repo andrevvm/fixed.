@@ -52,7 +52,6 @@ body, html {
 }
 
 .title h2 {
-  width: 600px;
   margin: 0 auto;
   margin-top: 10px;
   font-size: 24px;
@@ -298,6 +297,11 @@ nav a:hover {
   .title {
     height: 50%;
     padding: 0;
+  }
+
+  .title h2 {
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   .title-text {
