@@ -341,7 +341,7 @@ nav a:hover {
     height: 100%;
     margin: 0 auto;
     position: relative;
-    top: 10%;
+    top: 0;
   }
 
   .video .spotify_audio_player {
