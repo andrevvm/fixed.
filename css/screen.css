@@ -117,13 +117,13 @@ a {
   text-align: center;
 }
 
-.caption p {
+.caption p, .caption blockquote {
   margin: 0;
 }
 
 .caption span {
   display: inline-block;
-  padding: 10px 15px;
+  padding: 15px 20px;
   background: rgba(0,0,0,0.5);
 }
 
