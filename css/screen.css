@@ -184,8 +184,9 @@ nav a:hover {
 
 .video iframe {
   display: block;
+  min-width: 40%;
   width: auto;
-  height: 60%;
+  height: 80%;
   margin: 0 auto;
   position: relative;
   top: 10%;
