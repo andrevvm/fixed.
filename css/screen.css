@@ -134,9 +134,16 @@ a {
 
 .post .quote .source {
   color: #FFF;
-  opacity: 0.8;
-  font-size: 24px;
+  opacity: 0.75;
+  font-size: 20px;
+  font-weight: bold;
 }
+
+.post .quote .source a {
+  color: white;
+  text-decoration: underline;
+}
+
 
 nav {
   background: #FF3333;
