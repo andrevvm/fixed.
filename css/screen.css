@@ -34,6 +34,19 @@ body, html {
   top: 30%;
 }
 
+.arrow-up {
+  margin: 0 auto;
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 15px solid #2693FF;
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  bottom: 0px;
+}
+
 .meta {
   background: #2693FF;
   color: white;
@@ -66,7 +79,8 @@ body, html {
   top: 40%;
   text-align: center;
   font-size: 32px;
-  font-style: italic;
+  font-weight: bold;
+  color: white;
 }
 
 nav {
@@ -91,5 +105,20 @@ nav a:hover {
 .back, .forward {
   display: inline-block;
   width: 50%;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
 }
 
