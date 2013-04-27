@@ -233,6 +233,25 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.conversation {
+  margin: 0 auto;
+  padding: 0;
+  width: 50%;
+  position: relative;
+  top: 20%;
+  list-style: none;
+}
+
+.conversation li {
+  padding: 20px;
+  color: #FFF;
+  background: rgba(0,0,0,0.5);
+}
+
+.conversation li.odd {
+  background: rgba(0,0,0,0.65);
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
