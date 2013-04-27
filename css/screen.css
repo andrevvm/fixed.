@@ -239,13 +239,13 @@ nav a:hover {
 }
 
 .audio_player {
-  width: 150px;
+  width: 200px;
   margin: 0 auto;
   height: 100px;
 }
 
 .tumblr_audio_player {
-  width: 150px;
+  width: 200px;
   height: 100px;
   position: relative;
   top: 30%;
