@@ -87,6 +87,14 @@ a {
   padding: 20px;
 }
 
+.meta a {
+  text-decoration: none;
+}
+
+.meta a:hover {
+  text-decoration: underline;
+}
+
 .meta ul {
   margin: 0;
   padding: 0;
@@ -95,7 +103,6 @@ a {
 .meta li {
   display: inline-block;
   padding: 0 5px;
-  opacity: 0.5;
 }
 
 .caption {
