@@ -31,31 +31,31 @@
             {block:Posts}
             <article class="post {TagsAsClasses}">
                 {block:Text}
-                <div class="text">
+                <div class="text post-bg">
                     {block:Title}<h3>{Title}</h3>{/block:Title}
                     {Body}
                 </div>
                 {/block:Text}
                 {block:Quote}
-                <div class="quote">
+                <div class="quote post-bg">
                     <blockquote class="words {Length}">&#8220;{Quote}&#8221;</blockquote>
                     {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
                 </div>
                 {/block:Quote}
                 {block:Link}
-                <div class="link">
+                <div class="link post-bg">
                     <h3><a href="{URL}" {Target}>{Name}</a></h3>
                     {block:Description}<div class="caption">{Description}</div>{/block:Description}
                 </div>
                 {/block:Link}
                 {block:Video}
-                <div class="video">
+                <div class="video post-bg">
                     {Video-500}
                     {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
                 </div>
                 {/block:Video}
                 {block:Audio}
-                <div class="audio">
+                <div class="audio post-bg">
                     {block:AlbumArt}<img src="{AlbumArtURL}" alt="">{/block:AlbumArt}
                     {AudioPlayerBlack}
                     {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
@@ -68,7 +68,7 @@
                 </div>
                 {/block:Photo}
                 {block:Photoset}
-                <div class="photoset">
+                <div class="photoset post-bg">
                     {block:Photos}
                         <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
                         {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
@@ -78,14 +78,14 @@
                 {/block:Photoset}
 
                 {block:Panorama}
-                <div class="panorama">
+                <div class="panorama post-bg">
                     {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
                     {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
                 </div>
                 {/block:Panorama}
 
                 {block:Chat}
-                <div class="chat">
+                <div class="chat post-bg">
                     {block:Title}<h3>{Title}</h3>{/block:Title}
                     <ul class="conversation">
                         {block:Lines}
@@ -98,7 +98,7 @@
                 </div>
                 {/block:Chat}
                 {block:Answer}
-                <div class="answer">
+                <div class="answer post-bg">
                     <img src="{AskerPortraitURL-40}">
                     {Asker}
                     {Question}
