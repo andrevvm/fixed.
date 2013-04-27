@@ -181,6 +181,10 @@ nav a:hover {
   height: 100%;
 }
 
+.audio .post-bg {
+  -webkit-filter: blur(5px);
+}
+
 .tumblr_audio_player {
   width: 100%;
   height: 20%;
