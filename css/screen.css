@@ -238,6 +238,36 @@ nav a:hover {
   color: black;
 }
 
+.audio_player {
+  width: 300px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+.tumblr_audio_player {
+  width: 300px;
+  height: 50px;
+  position: relative;
+}
+
+.video iframe {
+  display: block;
+  width: 300px;
+  min-width: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.video .spotify_audio_player {
+  width: 300px;
+  height: auto;
+}
+
+.video .soundcloud_audio_player {
+  width: 300px;
+  height: auto;
+}  
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
