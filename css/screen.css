@@ -160,6 +160,11 @@ nav a:hover {
     top: 30%;
   }
 
+  .title a {
+    color: #FFF;
+    text-decoration: none;
+  }
+
   .post {
     max-width: 1500px;
     width: 100%;

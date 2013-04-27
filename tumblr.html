@@ -63,8 +63,10 @@
                 {/block:Audio}
                 {block:Photo}
                 <div class="photo post-bg" style="background-image:url({PhotoURL-HighRes})">
-                        {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
-                        {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                        {LinkOpenTag}{LinkCloseTag}
+                        {block:Caption}<div class="caption">
+                            <span>{Caption}</span>
+                        </div>{/block:Caption}
                 </div>
                 {/block:Photo}
                 {block:Photoset}
