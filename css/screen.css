@@ -51,6 +51,15 @@ body, html {
   margin: 0;
 }
 
+.title a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 .arrow-up {
   margin: 0 auto;
   width: 0; 
@@ -158,11 +167,6 @@ nav a:hover {
   .title h1 {
     position: relative;
     top: 30%;
-  }
-
-  .title a {
-    color: #FFF;
-    text-decoration: none;
   }
 
   .post {
