@@ -243,6 +243,11 @@ nav a:hover {
   font-size: 20px;
   line-height: 1.5em;
   padding: 50px 0;
+  background: rgba(255,255,255,0.5);
+}
+
+.text-block a {
+  color: black;
 }
 
 .conversation {
@@ -261,7 +266,8 @@ nav a:hover {
 }
 
 .conversation li.odd {
-  background: rgba(0,0,0,0.65);
+  background: rgba(255,255,255,0.5);
+  color: black;
 }
 
 /* ==========================================================================
