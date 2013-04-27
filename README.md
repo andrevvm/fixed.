@@ -1,4 +1,4 @@
 fixed.
 ======
 
-A hi-res, fullscreen, minimal &amp; beautiful Tumblr theme.
+A hi-res, fullscreen, responsive, minimal &amp; beautiful Tumblr theme.
