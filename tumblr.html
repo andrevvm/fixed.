@@ -32,8 +32,10 @@
             <article class="post {TagsAsClasses}">
                 {block:Text}
                 <div class="text post-bg">
-                    {block:Title}<h3>{Title}</h3>{/block:Title}
-                    {Body}
+                    <div class="text-block">
+                        {block:Title}<h3>{Title}</h3>{/block:Title}
+                        {Body}
+                    </div>
                 </div>
                 {/block:Text}
                 {block:Quote}

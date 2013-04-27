@@ -236,7 +236,13 @@ nav a:hover {
 .text {
   width: 60%;
   min-width: 700px;
-  margin: 50px auto;
+  margin: 0 auto;
+}
+
+.text-block {
+  font-size: 20px;
+  line-height: 1.5em;
+  padding: 50px 0;
 }
 
 .conversation {
