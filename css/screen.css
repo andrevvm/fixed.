@@ -189,12 +189,18 @@ nav a:hover {
 
 .video iframe {
   display: block;
-  min-width: 40%;
+  min-width: 50%;
   width: auto;
   height: 70%;
   margin: 0 auto;
   position: relative;
-  top: 10%;
+  top: 20%;
+}
+
+.video .soundcloud_audio_player {
+  width: 80%;
+  height: auto;
+  top: 40%;
 }
 
 /* ==========================================================================

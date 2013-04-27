@@ -47,20 +47,20 @@
                 {block:Link}
                 <div class="link post-bg">
                     <h3><a href="{URL}" {Target}>{Name}</a></h3>
-                    {block:Description}<div class="caption">{Description}</div>{/block:Description}
+                    {block:Description}<div class="caption"><span>{Description}</span></div>{/block:Description}
                 </div>
                 {/block:Link}
                 {block:Video}
                 <div class="video post-bg">
-                    {Video-500}
-                    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                    {Video-700}
+                    {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
                 </div>
                 {/block:Video}
                 {block:Audio}
                 <div class="audio post-bg" style="background-image: url({block:AlbumArt}{AlbumArtURL}{/block:AlbumArt})">
                     
                     {AudioPlayerBlack}
-                    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                    {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
                 </div>
                 {/block:Audio}
                 {block:Photo}
@@ -75,16 +75,16 @@
                 <div class="photoset post-bg">
                     {block:Photos}
                         <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
-                        {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                        {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
                     {/block:Photos}
-                    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                    {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
                 </div>
                 {/block:Photoset}
 
                 {block:Panorama}
                 <div class="panorama post-bg">
                     {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
-                    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                    {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
                 </div>
                 {/block:Panorama}
 
