@@ -36,10 +36,6 @@ body, html {
   background-size: cover;
 }
 
-.single .post-bg {
-  background-size: contain;
-}
-
 .title {
   background: #FF3333;
   color: white;
