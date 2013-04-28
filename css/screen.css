@@ -217,6 +217,7 @@ nav a:hover {
   font-size: 20px;
   line-height: 1.5em;
   width: 50%;
+  padding: 50px;
   margin: 0 auto;
   min-width: 600px;
   position: relative;
