@@ -258,6 +258,7 @@ nav a:hover {
 .album {
   background-position: center center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .audio_player {
