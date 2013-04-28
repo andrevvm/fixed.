@@ -231,6 +231,7 @@ nav a:hover {
   margin: 0 auto;
   padding: 0;
   width: 50%;
+  min-width: 300px;
   position: relative;
   top: 20%;
   list-style: none;
