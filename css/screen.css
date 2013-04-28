@@ -189,7 +189,7 @@ nav a:hover {
   margin: 0 auto;
   min-width: 600px;
   position: relative;
-  background: rgba(255,255,255,0.75);
+  color: white;
 }
 
 .text-block a {
