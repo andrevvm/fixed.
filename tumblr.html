@@ -79,14 +79,13 @@
                 </div>
                 {/block:Photo}
                 {block:Photoset}
-                <div class="photoset post-bg">
                     {block:Photos}
-                        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                    <div class="post-bg" style="background-image:url({PhotoURL-HighRes})">
                         {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
+                    </div>
                     {/block:Photos}
                     {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
-                </div>
-                {/block:Photoset}
+\                {/block:Photoset}
 
                 {block:Panorama}
                 <div class="panorama post-bg">
