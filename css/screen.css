@@ -48,15 +48,23 @@ body, html {
 
 .title h1 {
   margin: 0;
+  font-size: 48px;
+}
+
+.title.index-title h1 {
   font-size: 64px;
 }
 
 .title h2 {
   margin: 0 auto;
   margin-top: 10px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: normal;
   color: white;
+}
+
+.title.index-title h2 {
+  font-size: 24px;
 }
 
 .title a {
@@ -350,7 +358,7 @@ nav a:hover {
   .title-text {
     position: relative;
     top: 30%;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
   }
 
   .post {
