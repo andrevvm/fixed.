@@ -334,6 +334,7 @@ nav a:hover {
   .container {
     width: 100%;
     height: 100%;
+    max-width: 1500px;
   }
 
   .title.index-title {
@@ -353,7 +354,6 @@ nav a:hover {
   }
 
   .post {
-    max-width: 1500px;
     width: 100%;
     min-height: 100%;
   }
