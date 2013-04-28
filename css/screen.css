@@ -256,10 +256,7 @@ nav a:hover {
 }
 
 .album {
-  background-size: cover;
   background-position: center center;
-  background-repeat: no-repeat;
-  -webkit-filter: blur(2px);
 }
 
 .audio_player {
