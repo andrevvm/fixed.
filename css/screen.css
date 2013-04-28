@@ -249,6 +249,18 @@ nav a:hover {
   color: black;
 }
 
+.album, .player {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.album {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
 .audio_player {
   width: 200px;
   margin: 0 auto;

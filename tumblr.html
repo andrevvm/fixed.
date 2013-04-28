@@ -64,9 +64,13 @@
                 </div>
                 {/block:Video}
                 {block:Audio}
-                <div class="audio post-bg" style="background-image: url({block:AlbumArt}{AlbumArtURL}{/block:AlbumArt})">
-                    
-                    {AudioPlayerBlack}
+                <div class="audio post-bg">
+                    {block:AlbumArt}
+                    <div class="album" style="background-image: url({AlbumArtURL}"></div>
+                    {/block:AlbumArt}
+                    <div class="player">
+                        {AudioPlayerBlack}
+                    </div>
                     {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
                 </div>
                 {/block:Audio}
