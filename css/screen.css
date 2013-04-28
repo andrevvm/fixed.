@@ -217,6 +217,7 @@ nav a:hover {
   font-size: 20px;
   line-height: 1.5em;
   width: 50%;
+  margin: 0 auto;
   min-width: 600px;
   position: relative;
   background: rgba(255,255,255,0.75);
