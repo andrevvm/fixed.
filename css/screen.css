@@ -259,7 +259,7 @@ nav a:hover {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-blur: 4px;
+  -webkit-filter: blur(2px);
 }
 
 .audio_player {
