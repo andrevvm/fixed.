@@ -207,10 +207,10 @@ nav a:hover {
   text-decoration: underline;
 }
 
-.text {
-  width: 60%;
-  min-width: 700px;
-  margin: 0 auto;
+.text, .chat {
+  background: #0BA5E6;
+  height: auto;
+  padding: 100px;
 }
 
 .text-block {
