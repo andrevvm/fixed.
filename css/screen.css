@@ -262,6 +262,10 @@ nav a:hover {
   opacity: 0.9;
 }
 
+.video.post-bg, .audio.post-bg {
+  background-color: #0CE8F0;
+}
+
 .video iframe {
   display: block;
   width: 300px;
