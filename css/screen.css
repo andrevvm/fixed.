@@ -262,6 +262,10 @@ nav a:hover {
   opacity: 0.9;
 }
 
+.photo.post-bg {
+  background-color: #00B2AC;
+}
+
 .video.post-bg, .audio.post-bg {
   background-color: #0CE8F0;
 }
