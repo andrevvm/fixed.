@@ -279,19 +279,6 @@ nav a:hover {
    Audio / Video Posts
    ========================================================================== */
 
-
-.album, .player {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-.album {
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
 .audio_player {
   width: 200px;
   margin: 0 auto;
