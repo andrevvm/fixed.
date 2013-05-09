@@ -245,7 +245,7 @@ article.photoset:last-child {
   display: none;
 }
 
-.panorama a {
+.photo a, .panorama a {
   display: block;
   width: 100%;
   height: 100%;
