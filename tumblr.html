@@ -87,17 +87,17 @@
                         {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
                     </div>
                     </article>
-                    <article class="post {TagsAsClasses}">
                     {/block:Photos}
                     {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
                      
                 {/block:Photoset}
 
                 {block:Panorama}
-                <div class="panorama post-bg">
-                    {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
-                    {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
-                </div>
+                    <div class="post-bg panorama" style="background-image:url({PhotoURL-HighRes})">
+                        {LinkOpenTag}{LinkCloseTag}
+                        {block:Caption}<span class="caption"><span>{Caption}</span></span>{/block:Caption} 
+                    </div>
+                     
                 {/block:Panorama}
 
                 {block:Chat}
