@@ -343,6 +343,10 @@ nav a:hover {
   text-align: center;
 }
 
+.notes li:nth-child(even) {
+  background: #111;
+}
+
 .notes li .avatar_frame {
   display: inline-block;
   vertical-align: middle;
@@ -360,6 +364,7 @@ nav a:hover {
 
 .notes li .action a {
   color: #fff;
+  text-decoration: none;
 }
 
 /* ==========================================================================
