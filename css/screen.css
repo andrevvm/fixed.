@@ -325,7 +325,29 @@ nav a:hover {
   height: auto;
   position: relative;
   top: 20%;
-}  
+}
+
+/* ==========================================================================
+   Post Notes
+   ========================================================================== */
+
+.notes {
+  padding: 0;
+  margin: 0;
+  background: #111;
+}
+
+.notes li {
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+.notes li .avatar_frame {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 10px;
+}
 
 /* ==========================================================================
    Media Queries
