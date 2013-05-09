@@ -149,7 +149,7 @@ a {
 }
 
 nav {
-  background: #FF3333;
+  background: #333;
   color: #FFF;
   font-size: 72px;
   position: relative;
@@ -168,8 +168,13 @@ nav a:hover {
 }
 
 .back, .forward {
-  display: inline-block;
+  float: left;
   width: 50%;
+  background: #FF3333;
+}
+
+.forward {
+  float: right;
 }
 
 /* ==========================================================================

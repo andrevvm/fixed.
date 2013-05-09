@@ -120,7 +120,9 @@
                     {Answer}
                 </div>
                 {/block:Answer}
+                {block:IndexPage} 
                 <div class="arrow-up"></div>
+                {/block:IndexPage} 
             </article>
             <div class="meta">
                 <ul>
@@ -132,9 +134,16 @@
                             {/block:Date}
                         {block:IndexPage}</a>{/block:IndexPage}
                     </li>
-                        <li><span aria-hidden="true" class="icon-heart"> {NoteCount}</span>
+                    <li>
+                        {block:IndexPage}<a href="{Permalink}" class="permalink">{/block:IndexPage}
+                            <span aria-hidden="true" class="icon-heart"> {NoteCount}</span>
+                        {block:IndexPage}</a>{/block:IndexPage}
                     </li>
-                    <li><span aria-hidden="true" class="icon-bubble"> 0</span></li>
+                    <li>
+                        {block:IndexPage}<a href="{Permalink}" class="permalink">{/block:IndexPage}
+                            <span aria-hidden="true" class="icon-bubble"> 0</span>
+                        {block:IndexPage}</a>{/block:IndexPage}
+                    </li>
                 </ul>
             </div>
             {block:PostNotes}
@@ -144,6 +153,7 @@
                 {/block:PostNotes}
             {/block:Posts}
 
+            {block:IndexPage}
             <nav>
                 <a href="#" class="back">
                     <span class="arrow">&larr;</span>
@@ -151,6 +161,17 @@
                     <span class="arrow">&rarr;</span>
                 </a>
             </nav>
+            {/block:IndexPage}
+            {block:PermalinkPage}
+            <nav>
+                {block:PreviousPost}
+                <a href="{PreviousPost}" class="back">
+                    <span class="arrow">&larr;</span>
+                </a>{/block:PreviousPost}{block:NextPost}<a href="{NextPost}" class="forward">
+                    <span class="arrow">&rarr;</span>
+                </a>{/block:NextPost}
+            </nav>
+            {/block:PermalinkPage}
         </div>
 
 
