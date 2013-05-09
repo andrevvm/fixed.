@@ -162,7 +162,7 @@
                 </a>
             </nav>
             {/block:IndexPage}
-            {block:PermalinkPage}
+            {block:PermalinkPagination}
             <nav>
                 {block:PreviousPost}
                 <a href="{PreviousPost}" class="back">
@@ -170,8 +170,9 @@
                 </a>{/block:PreviousPost}{block:NextPost}<a href="{NextPost}" class="forward">
                     <span class="arrow">&rarr;</span>
                 </a>{/block:NextPost}
+                <div class="clear"></div>
             </nav>
-            {/block:PermalinkPage}
+            {/block:PermalinkPagination}
         </div>
 
 
