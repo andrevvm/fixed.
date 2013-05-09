@@ -35,7 +35,8 @@
             <article class="post {TagsAsClasses} 
                 {block:Chat}inline{/block:Chat}
                 {block:Text}inline{/block:Text}
-                {block:PermalinkPage}single{/block:PermalinkPage} ">
+                {block:PermalinkPage}single{/block:PermalinkPage}
+                {block:Photoset}photoset{/block:Photoset}">
                 {block:Text}
                 <div class="text post-bg">
                     <div class="text-block">
@@ -165,10 +166,10 @@
             {block:PermalinkPagination}
             <nav>
                 {block:PreviousPost}
-                <a href="{PreviousPost}" class="back">
-                    <span class="arrow">&larr;</span>
-                </a>{/block:PreviousPost}{block:NextPost}<a href="{NextPost}" class="forward">
+                <a href="{PreviousPost}" class="forward">
                     <span class="arrow">&rarr;</span>
+                </a>{/block:PreviousPost}{block:NextPost}<a href="{NextPost}" class="back">
+                    <span class="arrow">&larr;</span>
                 </a>{/block:NextPost}
                 <div class="clear"></div>
             </nav>

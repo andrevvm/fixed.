@@ -241,6 +241,10 @@ nav a:hover {
   background-color: #00B2AC;
 }
 
+article.photoset:last-child {
+  display: none;
+}
+
 /* ==========================================================================
    Link / Quote Posts
    ========================================================================== */
@@ -380,6 +384,10 @@ nav a:hover {
 .notes li .action a {
   color: #fff;
   text-decoration: none;
+}
+
+.notes li .action a:hover {
+  text-decoration: underline;
 }
 
 /* ==========================================================================
