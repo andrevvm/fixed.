@@ -339,7 +339,7 @@ nav a:hover {
 
 .notes li {
   display: block;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -350,8 +350,8 @@ nav a:hover {
 }
 
 .notes li .avatar_frame img {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 }
 
 .notes li .action {
