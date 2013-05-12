@@ -144,23 +144,13 @@
                     </li>
                     {/block:NoteCount}
                     {block:IfDisqusShortname}
-                    <li>
-                        {block:IndexPage}<a href="{Permalink}#disqus_thread" class="icon-bubble"> {/block:IndexPage}
-                        {block:PermalinkPage}<span class="icon-bubble"> {/block:PermalinkPage}
-                        <span class="dsq-comment-count"></span>
-                        <script type="text/javascript">
-                            var disqus_shortname = '{text:Disqus Shortname}';
-
-                            (function () {
-                                var s = document.createElement('script'); s.async = true;
-                                s.type = 'text/javascript';
-                                s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-                                (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-                            }());
-                        </script>
-                        {block:PermalinkPage}</a>{/block:PermalinkPage}
-                        {block:IndexPage}</a>{/block:IndexPage}
+                    {block:IndexPage}
+                    <li class="comment-count-0">
+                        <a href="{Permalink}#disqus_thread" class="icon-bubble"> 
+                            0
+                        </a>
                     </li>
+                    {/block:IndexPage}
                     {/block:IfDisqusShortname}
                 </ul>
             </div>
@@ -216,6 +206,16 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
+        <script type="text/javascript">
+            var disqus_shortname = '{text:Disqus Shortname}';
+
+            (function () {
+                var s = document.createElement('script'); s.async = true;
+                s.type = 'text/javascript';
+                s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+            }());
+        </script>
         <script src="js/main.js"></script>
     </body>
 </html>
