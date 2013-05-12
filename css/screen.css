@@ -92,6 +92,10 @@ a {
   text-decoration: underline;
 }
 
+#disqus_block a  {
+  color: #0BA5E6;
+}
+
 .arrow-up {
   margin: 0 auto;
   width: 0; 
