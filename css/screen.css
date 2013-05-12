@@ -396,6 +396,17 @@ article.photoset:last-child {
   text-decoration: underline;
 }
 
+#disqus_block {
+  background:#ccc;
+  padding: 30px 0;
+}
+
+#disqus_thread {
+  width: 50%;
+  margin: 0 auto;
+  min-width: 500px;
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
