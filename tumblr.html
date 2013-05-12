@@ -144,8 +144,9 @@
                     </li>
                     {/block:NoteCount}
                     {block:IfDisqusShortname}
-                    <li class="icon-bubble">
-                        {block:IndexPage}<a href="{Permalink}#disqus_thread">{/block:IndexPage}
+                    <li>
+                        {block:IndexPage}<a href="{Permalink}#disqus_thread" class="icon-bubble"> {/block:IndexPage}
+                        {block:PermalinkPage}<span class="icon-bubble"> {/block:PermalinkPage}
                         <span class="dsq-comment-count"></span>
                         <script type="text/javascript">
                             var disqus_shortname = '{text:Disqus Shortname}';
@@ -157,6 +158,7 @@
                                 (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
                             }());
                         </script>
+                        {block:PermalinkPage}</a>{/block:PermalinkPage}
                         {block:IndexPage}</a>{/block:IndexPage}
                     </li>
                     {/block:IfDisqusShortname}

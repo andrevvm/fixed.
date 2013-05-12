@@ -528,7 +528,7 @@ you can use the generic selector below, but it's slower:
   content: "\e003";
 }
 .icon-bubble:before {
-  content: "\e004";
+  content: "\e004 ";
 }
 .icon-link:before {
   content: "\e000";
