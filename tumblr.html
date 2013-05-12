@@ -142,9 +142,11 @@
                             <span aria-hidden="true" class="icon-heart"> {NoteCount}</span>
                         {block:IndexPage}</a>{/block:IndexPage}
                     </li>
-                    {/block:NoteCount} 
-                    <li>
-                        {block:IndexPage}<a class="dsq-comment-count" href="{Permalink}#disqus_thread">{/block:IndexPage}
+                    {/block:NoteCount}
+                    {block:IfDisqusShortname}
+                    <li class="icon-bubble">
+                        {block:IndexPage}<a href="{Permalink}#disqus_thread">{/block:IndexPage}
+                        <span class="dsq-comment-count"></span>
                         <script type="text/javascript">
                             var disqus_shortname = '{text:Disqus Shortname}';
 
@@ -155,9 +157,9 @@
                                 (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
                             }());
                         </script>
-                        <span aria-hidden="true" class="icon-bubble"> 0</span>
                         {block:IndexPage}</a>{/block:IndexPage}
                     </li>
+                    {/block:IfDisqusShortname}
                 </ul>
             </div>
             {block:PostNotes}

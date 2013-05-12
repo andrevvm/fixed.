@@ -123,7 +123,7 @@ a {
 }
 
 .meta a:hover {
-  text-decoration: underline;
+  color: #FF3333;
 }
 
 .meta ul {
