@@ -152,7 +152,7 @@ body, html {
 }
 
 .title a:hover {
-  text-decoration: underline;
+  color: black;
 }
 
 a {
@@ -523,7 +523,6 @@ article.photoset:last-child {
   .container {
     width: 100%;
     height: 100%;
-    max-width: 1500px;
   }
 
   .title h1 {
@@ -762,6 +761,7 @@ _gaq.push(['_trackPageview']);
 
           </div>
           {/block:Photo}
+
           {block:Photoset}
             {block:Photos}
             <div class="post-bg" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
@@ -770,15 +770,13 @@ _gaq.push(['_trackPageview']);
             </article>
             {/block:Photos}
             {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
-               
           {/block:Photoset}
 
           {block:Panorama}
             <div class="post-bg panorama" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
               {LinkOpenTag}{LinkCloseTag}
               {block:Caption}<span class="caption"><span>{Caption}</span></span>{/block:Caption} 
-            </div>
-               
+            </div>               
           {/block:Panorama}
 
           {block:Chat}
@@ -888,7 +886,7 @@ _gaq.push(['_trackPageview']);
       <div class="clear"></div>
       <div id="attribution">
         <p>
-          <a href="http://fixed.andrevv.com" target="_blank">Fixed.</a> is a <a href="http://tumblr.com" target="_blank">Tumblr</a> theme designed by <a href="http://andrevv.com" target="_blank">Andrew McCarthy</a>
+          <a href="http://fixed-theme.tumblr.com" target="_blank">Fixed.</a> is a <a href="http://tumblr.com" target="_blank">Tumblr</a> theme designed by <a href="http://andrevv.com" target="_blank">Andrew McCarthy</a>
         </p>
       </div>
     </div>
