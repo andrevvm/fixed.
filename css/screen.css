@@ -9,6 +9,33 @@
   font-style: normal;
 }
 
+a.install {
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  font: 600 12px/18px "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+  color: #FFF;
+  text-decoration: none;
+  background-color: rgba(0,0,0,.38);
+  border: solid 1px rgba(0,0,0,.18);
+  position: absolute;
+  top: 26px;
+  right: 3px;
+  z-index: 1337;
+  height: 18px;
+  padding: 0 5px;
+  cursor: pointer;
+  text-shadow: rgba(0,0,0,.08);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+a.install:hover {
+  background-color: rgba(0,0,0,.28);
+}
+a.install:active {
+  background-color: rgba(0,0,0,.22);
+}
+
 body, html {
   background-color: black;
   width: 100%;
@@ -133,7 +160,7 @@ a {
 
 .meta li {
   display: inline-block;
-  padding: 0 5px;
+  padding: 0 10px;
 }
 
 .caption {
@@ -460,7 +487,7 @@ article.photoset:last-child {
 
 
   .audio_player {
-    width: 20%;
+    width: 30%;
     margin: 0 auto;
     height: 100%;
   }

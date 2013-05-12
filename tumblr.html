@@ -1,221 +1,911 @@
 <!DOCTYPE html>
 <html lang="{block:English}en{/block:English}{block:French}fr{/block:French}{block:German}de{/block:German}{block:Japanese}ja{/block:Japanese}{block:Italian}it{/block:Italian}{block:Spanish}es{/block:Spanish}{block:Polish}pl{/block:Polish}">
 <head>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta name="viewport" content="width=device-width">
-        <meta charset="utf-8">
-        <meta name='text:Disqus Shortname' content='' />
-        <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
-        {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
 
-        <link rel="apple-touch-icon" href="{PortraitURL-128}">
-        <link rel="shortcut icon" href="{Favicon}">
-        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+<!--
 
-        <link rel="stylesheet" href="http://andrevvm.github.io/fixed./css/normalize.min.css">
-        <link rel="stylesheet" href="http://andrevvm.github.io/fixed./css/screen.css">
-        <!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
+  Fixed. Tumblr Theme
+  http://fixed.andrevv.com/
 
-        <!--[if lt IE 9]>
-            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
-        <![endif]-->
-    </head>
-    <body>
+  Copyright (c) 2013 Andrew McCarthy.
+  Please do not re-use code without permission.
+  http://andrevv.com/
 
-        <div class="container">
-            <div class="title {block:IndexPage}index-title{/block:IndexPage}">
-                <div class="title-text">
-                    <h1><a href="/">{Title}</a></h1>
-                    <h2>{Description}</h2>
-                </div>
-            </div>
-            {block:Posts}
-            <article class="post {TagsAsClasses} 
-                {block:Chat}inline{/block:Chat}
-                {block:Text}inline{/block:Text}
-                {block:PermalinkPage}single{/block:PermalinkPage}
-                {block:Photoset}photoset{/block:Photoset}">
-                {block:Text}
-                <div class="text post-bg">
-                    <div class="text-block">
-                        {block:Title}<h3>{Title}</h3>{/block:Title}
-                        {Body}
-                    </div>
+  Version 1.00.00
 
-                </div>
-                {/block:Text}
-                {block:Quote}
-                <div class="quote post-bg">
-                    <div class="quote-text">
-                        <blockquote class="words {Length}">{Quote}</blockquote>
-                        {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
-                    </div>
-                </div>
-                {/block:Quote}
-                {block:Link}
-                <div class="link post-bg">
-                    <h3><span class="icon-link"> <a href="{URL}" {Target}>{Name}</a></span></h3>
-                    {block:Description}<div class="caption"><span>{Description}</span></div>{/block:Description}
-                </div>
-                {/block:Link}
-                {block:Video}
-                <div class="video post-bg">
-                    {Video-700}
-                    {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
-                </div>
-                {/block:Video}
-                {block:Audio}
-                <div class="audio post-bg" {block:AlbumArt}style="background-image: url({AlbumArtURL})"{/block:AlbumArt}>                   
-                    {AudioPlayerBlack}
-                    {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
-                </div>
-                {/block:Audio}
-                {block:Photo}
-                <div class="photo post-bg" style="background-image:url({PhotoURL-HighRes})">
-                        {LinkOpenTag}{LinkCloseTag}
-                        {block:Caption}<div class="caption">
-                            <span>{Caption}</span>
-                        </div>{/block:Caption}
+-->
 
-                </div>
-                {/block:Photo}
-                {block:Photoset}
-                    {block:Photos}
-                    <div class="post-bg" style="background-image:url({PhotoURL-HighRes})">
-                        {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
-                    </div>
-                    </article>
-                    {/block:Photos}
-                    {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
-                     
-                {/block:Photoset}
+<meta name='text:Disqus Shortname' content='' />
+<meta name="text:Google Analytics ID" content="">
+<!-- <meta name="if:Show Install Theme Button" content="0"> -->
 
-                {block:Panorama}
-                    <div class="post-bg panorama" style="background-image:url({PhotoURL-HighRes})">
-                        {LinkOpenTag}{LinkCloseTag}
-                        {block:Caption}<span class="caption"><span>{Caption}</span></span>{/block:Caption} 
-                    </div>
-                     
-                {/block:Panorama}
+<title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
+<meta name="description" content="{MetaDescription}">
 
-                {block:Chat}
-                <div class="chat post-bg">
-                    {block:Title}<h3>{Title}</h3>{/block:Title}
-                    <ul class="conversation">
-                        {block:Lines}
-                        <li class="line {Alt}">
-                            {block:Label}<span class="person">{Label}</span>{/block:Label}
-                            <span class="person-said">{Line}</span>
-                        </li>
-                        {/block:Lines}
-                    </ul>
-                </div>
-                {/block:Chat}
-                {block:Answer}
-                <div class="answer post-bg">
-                    <img src="{AskerPortraitURL-40}">
-                    {Asker}
-                    {Question}
-                    {Answer}
-                </div>
-                {/block:Answer}
-                {block:IndexPage} 
-                <div class="arrow-up"></div>
-                {/block:IndexPage} 
-            </article>
-            <div class="meta">
-                <ul>
-                    <li>
-                        {block:IndexPage}<a href="{Permalink}" class="permalink">{/block:IndexPage}
-                            {block:Date}
-                            {block:NewDayDate}{ShortMonth} {DayOfMonth}{/block:NewDayDate}
-                            {block:SameDayDate}{ShortMonth} {DayOfMonth}{/block:SameDayDate}
-                            {/block:Date}
-                        {block:IndexPage}</a>{/block:IndexPage}
-                    </li>
-                    {block:NoteCount} 
-                    <li>
-                        {block:IndexPage}<a href="{Permalink}#notes" class="permalink">{/block:IndexPage}
-                            <span aria-hidden="true" class="icon-heart"> {NoteCount}</span>
-                        {block:IndexPage}</a>{/block:IndexPage}
-                    </li>
-                    {/block:NoteCount}
-                    {block:IfDisqusShortname}
-                    {block:IndexPage}
-                    <li class="comment-count-0">
-                        <a href="{Permalink}#disqus_thread" class="icon-bubble"> 
-                            0
-                        </a>
-                    </li>
-                    {/block:IndexPage}
-                    {/block:IfDisqusShortname}
-                </ul>
-            </div>
-            {block:PostNotes}
-            <div class="post-notes" id="notes">
-                {PostNotes-64}
-            </div>
-            {/block:PostNotes}
-            {/block:Posts}
-            {block:PermalinkPage}
-            {block:IfDisqusShortname}
-            <div id="disqus_block">
-                <div id="disqus_thread"></div>
-            </div>
-            <script type="text/javascript">
-                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-                var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace example with your forum shortname
+<link rel="apple-touch-icon" href="{PortraitURL-128}">
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
 
-                /* * * DON'T EDIT BELOW THIS LINE * * */
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<link rel="stylesheet" href="http://static.tumblr.com/exomipi/lKfmmovhi/normalize.min.css">
 
-            {/block:IfDisqusShortname}
-            {/block:PermalinkPage}
-            {block:IndexPage}
-            <nav>
-                <a href="#" class="back">
-                    <span class="arrow">&larr;</span>
-                </a><a href="#" class="forward">
-                    <span class="arrow">&rarr;</span>
-                </a>
-            </nav>
-            {/block:IndexPage}
-            {block:PermalinkPagination}
-            <nav>
-                {block:PreviousPost}
-                <a href="{PreviousPost}" class="forward">
-                    <span class="arrow">&rarr;</span>
-                </a>{/block:PreviousPost}{block:NextPost}<a href="{NextPost}" class="back">
-                    <span class="arrow">&larr;</span>
-                </a>{/block:NextPost}
-                <div class="clear"></div>
-            </nav>
-            {/block:PermalinkPagination}
+<style>
+
+@font-face {
+  font-family: 'fixed-icons';
+  src:url('http://static.tumblr.com/exomipi/6udmmovk6/fixed-icons.eot');
+  src:url('http://static.tumblr.com/exomipi/6udmmovk6/fixed-icons.eot?#iefix') format('embedded-opentype'),
+    url('http://static.tumblr.com/exomipi/hjCmmovkw/fixed-icons.woff') format('woff'),
+    url('http://static.tumblr.com/exomipi/EWtmmovlb/fixed-icons.ttf') format('truetype'),
+    url('http://static.tumblr.com/exomipi/kAzmmovlu/fixed-icons.svg#fixed-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+a.install {
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  font: 600 12px/18px "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+  color: #FFF;
+  text-decoration: none;
+  background-color: rgba(0,0,0,.38);
+  border: solid 1px rgba(0,0,0,.18);
+  position: absolute;
+  top: 26px;
+  right: 3px;
+  z-index: 1337;
+  height: 18px;
+  padding: 0 5px;
+  cursor: pointer;
+  text-shadow: rgba(0,0,0,.08);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+a.install:hover {
+  background-color: rgba(0,0,0,.28);
+}
+a.install:active {
+  background-color: rgba(0,0,0,.22);
+}
+
+body, html {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  font-family: "Helvetica Neue","HelveticaNeue",Helvetica,Arial;
+}
+
+.clear {
+  display: block;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  clear: both;
+  float: none;
+}
+
+.container {
+  width: auto;
+  height: auto;
+}
+
+.post {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+}
+
+.post-bg {
+  width: 100%;
+  height: auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  position: relative;
+}
+
+.photo, .photoset, .panorama, .audio {
+  min-height: 480px;
+}
+
+.title {
+  background: #FF3333;
+  color: white;
+  text-align: center;
+  height: auto;
+  padding: 30px 0;
+  font-weight: bold;
+  position: relative;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 48px;
+  word-wrap: break-word;
+}
+
+.title.index-title h1 {
+  font-size: 64px;
+}
+
+.title h2 {
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: normal;
+  color: white;
+}
+
+.title.index-title h2 {
+  font-size: 24px;
+}
+
+.title a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.title a:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+#disqus_block a  {
+  color: #0BA5E6;
+}
+
+.arrow-up {
+  margin: 0 auto;
+  width: 0; 
+  height: 0; 
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 11px solid #000;
+  position: absolute;
+  left: 50%;
+  margin-left: -11px;
+  bottom: -1px;
+}
+
+.meta {
+  background: #000;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.meta a {
+  text-decoration: none;
+}
+
+.meta a:hover {
+  color: #FF3333;
+}
+
+.meta ul {
+  margin: 0;
+  padding: 0;
+}
+
+.meta li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.caption {
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFF;
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+.caption p, .caption blockquote {
+  margin: 0;
+}
+
+.caption span {
+  display: inline-block;
+  padding: 15px 20px;
+  background: rgba(0,0,0,0.5);
+  margin: 0 10%;
+}
+
+.post {
+  background-color: #00D9A3;
+}
+
+nav {
+  background: #333;
+  color: #FFF;
+  font-size: 72px;
+  position: relative;
+  width: 100%;
+}
+
+nav a  {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1em;
+  padding: 0px 0 0.2em;
+}
+
+
+nav a:hover {
+  background-color: #FF5153;
+}
+
+.back, .forward {
+  float: left;
+  width: 50%;
+  background: #FF3333;
+}
+
+.forward {
+  float: right;
+}
+
+/* ==========================================================================
+   Text / Chat Posts
+   ========================================================================== */
+
+.text, .chat, .answer {
+  background: #0BA5E6;
+  height: auto;
+  padding: 20px 0 30px;
+}
+
+.text {
+  padding: 10px 0 20px;
+}
+
+.text-block {
+  font-size: 16px;
+  line-height: 1.5em;
+  width: 50%;
+  margin: 0 auto;
+  min-width: 300px;
+  position: relative;
+  color: white;
+}
+
+.text-block a {
+  color: white;
+  position: relative;
+}
+
+.conversation {
+  margin: 0 auto;
+  padding: 0;
+  width: 50%;
+  min-width: 300px;
+  position: relative;
+  top: 20%;
+  list-style: none;
+}
+
+.conversation li {
+  padding: 20px;
+  color: #FFF;
+  background: rgba(0,0,0,0.75);
+}
+
+.conversation li.odd {
+  background: rgba(255,255,255,0.75);
+  color: black;
+}
+
+.answer-avatar {
+  float: left;
+  margin: 0 20px 20px 0;
+}
+
+/* ==========================================================================
+   Photo Posts
+   ========================================================================== */
+
+
+.photo.post-bg {
+  background-color: #00B2AC;
+}
+
+article.photoset:last-child {
+  display: none;
+}
+
+.photo a, .panorama a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================================================
+   Link / Quote Posts
+   ========================================================================== */
+
+
+.link h3 {
+  margin: 0 auto;
+  position: relative;
+  top: 40%;
+  font-size: 24px;
+  text-align: center;
+  color: #FFF;
+}
+
+.link h3 a {
+  text-decoration: none;
+}
+
+.link h3 a:hover {
+  text-decoration: underline;
+}
+
+.quote, .link {
+  padding: 60px 0 70px;
+}
+
+.quote .quote-text {
+  text-align: center;
+  position: relative;
+  top: 35%;
+  margin: 0 5%;
+}
+
+.quote blockquote {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.quote .source {
+  color: #FFF;
+  opacity: 0.75;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.quote .source a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Audio / Video Posts
+   ========================================================================== */
+
+.audio_player {
+  width: 240px;
+  margin: 0 auto;
+  height: 100px;
+}
+
+.tumblr_audio_player {
+  width: 240px;
+  height: 100px;
+  position: relative;
+  top: 180px;
+  opacity: 0.9;
+}
+
+
+.video.post-bg, .audio.post-bg {
+  background-color: #0CE8F0;
+}
+
+.audio.post-bg {
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+.video iframe {
+  display: block;
+  width: 320px;
+  height: 225px;
+  min-width: 300px;
+  margin: 0 auto;
+  position: relative;
+  top: 10%;
+}
+
+.video {
+  min-height: 225px;
+}
+
+.video .spotify_audio_player {
+  width: 300px;
+  height: auto;
+  position: relative;
+  top: 20%;
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+.video .soundcloud_audio_player {
+  width: 300px;
+  height: 165px;
+  position: relative;
+  top: 20%;
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+/* ==========================================================================
+   Post Notes
+   ========================================================================== */
+
+.notes {
+  padding: 0;
+  margin: 0;
+  background: #222;
+}
+
+.notes li {
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+.notes li:nth-child(even) {
+  background: #111;
+}
+
+.notes li .avatar_frame {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
+.notes li .avatar_frame img {
+  width: 32px;
+  height: 32px;
+}
+
+.notes li .action {
+  color: #ccc;
+}
+
+.notes li .action a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.notes li .action a:hover {
+  text-decoration: underline;
+}
+
+#disqus_block {
+  background:#f6f6f6;
+  padding: 30px 0;
+}
+
+#disqus_thread {
+  width: 50%;
+  margin: 0 auto;
+  min-width: 300px;
+}
+
+#attribution {
+  padding: 10px;
+  text-align: center;
+  background: #FF3333;
+  border-top: 1px solid black;
+  font-size: 12px;
+}
+
+#attribution p {
+  margin: 0;
+  color: #FFF;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-device-width: 1025px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    max-width: 1500px;
+  }
+
+  .title h1 {
+    word-wrap: normal;
+  }
+
+  .caption {
+    font-size: 24px;
+  }
+  .title.index-title {
+    height: 50%;
+    padding: 0;
+  }
+
+  .title.index-title .title-text {
+    top: 20%;
+  }
+
+  .title h2 {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .title-text {
+    position: relative;
+    top: 0;
+    padding: 30px 0;
+  }
+
+  .autopagerize_page_element {
+    position: relative;
+  }
+
+  .post {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+  }
+
+  .post.inline {
+    height: auto;
+    min-height: auto;
+  }
+
+  .post-bg {
+    height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .quote, .link {
+    padding: 0;
+  }
+
+  .link h3 {
+    font-size: 32px;
+  }
+
+  .quote blockquote {
+    font-size: 32px;
+  }
+
+  .quote .source {
+    font-size: 20px;
+  }
+
+  .text, .chat, .answer {
+    background: #0BA5E6;
+    height: auto;
+    padding: 80px 0 90px;
+  }
+
+
+  .text-block {
+    font-size: 20px;
+    width: 600px;
+  }
+
+
+  .audio_player {
+    width: 30%;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  .tumblr_audio_player {
+    width: 100%;
+    height: 20%;
+    position: relative;
+    top: 40%;
+  }
+
+  .video iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+  }
+
+  .video .spotify_audio_player {
+    width: 426px;
+    height: 70%;
+    top: 10%;
+  }
+
+  .video .soundcloud_audio_player {
+    width: 80%;
+    height: 165px;
+    top: 40%;
+  }
+
+  #disqus_thread {
+    min-width: 500px;
+  }
+
+  #attribution {
+    padding: 20px;
+    font-size: 14px;
+  }
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Font Icons
+   ========================================================================== */
+
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-heart, .icon-bubble, .icon-link {
+  font-family: 'fixed-icons';
+  speak: none;
+  line-height: 1;
+}
+.icon-heart:before, .icon-bubble:before, .icon-link:before {
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-heart:before {
+  content: "\e003";
+}
+.icon-bubble:before {
+  content: "\e004\ ";
+}
+.icon-link:before {
+  content: "\e000";
+}
+
+
+{CustomCSS}
+</style>
+{block:IfGoogleAnalyticsID}<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>{/block:IfGoogleAnalyticsID}
+</head>
+  <body>
+    {block:IfShowInstallThemeButton}<a href="http://fixed.andrevv.com/" class="install">Install Theme</a>{/block:IfShowInstallThemeButton}
+    <div class="container">
+      <div class="title {block:IndexPage}index-title{/block:IndexPage}">
+        <div class="title-text">
+          <h1><a href="/">{Title}</a></h1>
+          <h2>{Description}</h2>
         </div>
+      </div>
+      <!-- infinite scroll start <div class="autopagerize_page_element"> -->
+        {block:Posts}
+        <article class="post {TagsAsClasses} 
+          {block:Chat}inline{/block:Chat}
+          {block:Text}inline{/block:Text}
+          {block:PermalinkPage}single{/block:PermalinkPage}
+          {block:Photoset}photoset{/block:Photoset}">
+          {block:Text}
+          <div class="text post-bg">
+            <div class="text-block">
+              {block:Title}<h3>{Title}</h3>{/block:Title}
+              {Body}
+            </div>
 
+          </div>
+          {/block:Text}
+          {block:Quote}
+          <div class="quote post-bg">
+            <div class="quote-text">
+              <blockquote class="words {Length}">{Quote}</blockquote>
+              {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
+            </div>
+          </div>
+          {/block:Quote}
+          {block:Link}
+          <div class="link post-bg">
+            <h3><span class="icon-link"> <a href="{URL}" {Target}>{Name}</a></span></h3>
+            {block:Description}<div class="caption"><span>{Description}</span></div>{/block:Description}
+          </div>
+          {/block:Link}
+          {block:Video}
+          <div class="video post-bg">
+            {Video-700}
+            {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
+          </div>
+          {/block:Video}
+          {block:Audio}
+          <div class="audio post-bg" {block:AlbumArt}style="background-image: url({AlbumArtURL})"{/block:AlbumArt}>                   
+            {AudioPlayerBlack}
+            {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
+          </div>
+          {/block:Audio}
+          {block:Photo}
+          <div class="photo post-bg" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
+            {LinkOpenTag}{LinkCloseTag}
+            {block:Caption}<div class="caption">
+              <span>{Caption}</span>
+            </div>{/block:Caption}
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+          </div>
+          {/block:Photo}
+          {block:Photoset}
+            {block:Photos}
+            <div class="post-bg" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
+              {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
+            </div>
+            </article>
+            {/block:Photos}
+            {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
+               
+          {/block:Photoset}
 
-        <script type="text/javascript">
-            var disqus_shortname = '{text:Disqus Shortname}';
+          {block:Panorama}
+            <div class="post-bg panorama" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
+              {LinkOpenTag}{LinkCloseTag}
+              {block:Caption}<span class="caption"><span>{Caption}</span></span>{/block:Caption} 
+            </div>
+               
+          {/block:Panorama}
 
-            (function () {
-                var s = document.createElement('script'); s.async = true;
-                s.type = 'text/javascript';
-                s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-                (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-            }());
-        </script>
-        <script src="js/main.js"></script>
-    </body>
+          {block:Chat}
+          <div class="chat post-bg">
+            {block:Title}<h3>{Title}</h3>{/block:Title}
+            <ul class="conversation">
+              {block:Lines}
+              <li class="line {Alt}">
+                {block:Label}<span class="person">{Label}</span>{/block:Label}
+                <span class="person-said">{Line}</span>
+              </li>
+              {/block:Lines}
+            </ul>
+          </div>
+          {/block:Chat}
+          {block:Answer}
+          <div class="answer post-bg">
+            <div class="text-block">
+              <img class="answer-avatar" src="{AskerPortraitURL-40}" />
+              {Asker}
+              {Question}
+              {Answer}
+            </div>
+          </div>
+          {/block:Answer}
+          {block:IndexPage} 
+          <div class="arrow-up"></div>
+          {/block:IndexPage} 
+        </article>
+        <div class="meta">
+            <ul>
+                <li>
+                    {block:IndexPage}<a href="{Permalink}" class="permalink">{/block:IndexPage}
+                        {block:Date}
+                        {block:NewDayDate}{ShortMonth} {DayOfMonth}{/block:NewDayDate}
+                        {block:SameDayDate}{ShortMonth} {DayOfMonth}{/block:SameDayDate}
+                        {/block:Date}
+                    {block:IndexPage}</a>{/block:IndexPage}
+                </li>
+                {block:NoteCount} 
+                <li>
+                    {block:IndexPage}<a href="{Permalink}#notes" class="permalink">{/block:IndexPage}
+                        <span aria-hidden="true" class="icon-heart"> {NoteCount}</span>
+                    {block:IndexPage}</a>{/block:IndexPage}
+                </li>
+                {/block:NoteCount}
+                {block:IfDisqusShortname}
+                {block:IndexPage}
+                <li class="comment-count-0">
+                    <a href="{Permalink}#disqus_thread" class="icon-bubble"> 
+                        0
+                    </a>
+                </li>
+                {/block:IndexPage}
+                {/block:IfDisqusShortname}
+            </ul>
+        </div>
+        {block:PostNotes}
+        <div class="post-notes" id="notes">
+            {PostNotes-64}
+        </div>
+        {/block:PostNotes}
+        {/block:Posts}
+      <!-- infinite scroll end </div> -->
+      {block:PermalinkPage}
+      {block:IfDisqusShortname}
+      <div id="disqus_block">
+          <div id="disqus_thread"></div>
+      </div>
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace example with your forum shortname
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      {/block:IfDisqusShortname}
+      {/block:PermalinkPage}
+      {block:Pagination}
+      <nav>
+          {block:PreviousPage}
+          <a href="{PreviousPage}" class="back">
+              <span class="arrow">&larr;</span>
+          </a>{/block:PreviousPage}{block:NextPage}<a href="{NextPage}" class="forward">
+              <span class="arrow">&rarr;</span>
+          </a>{/block:NextPage}
+          <div class="clear"></div>
+      </nav>
+      {/block:Pagination}
+      {block:PermalinkPagination}
+      <nav>
+          {block:PreviousPost}
+          <a href="{PreviousPost}" class="forward">
+              <span class="arrow">&rarr;</span>
+          </a>{/block:PreviousPost}{block:NextPost}<a href="{NextPost}" class="back">
+              <span class="arrow">&larr;</span>
+          </a>{/block:NextPost}
+          <div class="clear"></div>
+      </nav>
+      {/block:PermalinkPagination}
+      <div class="clear"></div>
+      <div id="attribution">
+        <p>
+          <a href="http://fixed.andrevv.com" target="_blank">Fixed.</a> is a <a href="http://tumblr.com" target="_blank">Tumblr</a> theme designed by <a href="http://andrevv.com" target="_blank">Andrew McCarthy</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- infinite scroll script 
+    <script src="http://static.tumblr.com/exomipi/1Bemmp1m4/infinitescroll.js" type="text/JavaScript"></script>
+    -->
+
+    <script type="text/javascript">
+        var disqus_shortname = '{text:Disqus Shortname}';
+
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+  </body>
 </html>
