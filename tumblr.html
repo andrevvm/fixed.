@@ -20,7 +20,11 @@
 
 <meta name='text:Disqus Shortname' content='' />
 <meta name="text:Google Analytics ID" content="">
-<!-- <meta name="if:Show Install Theme Button" content="0"> -->
+<meta name="if:Infinite Scrolling" content="0">
+
+<!-- DEFAULT COLORS -->
+<meta name="color:Title" content="#FFFFFF"/>
+<meta name="color:Title Hover" content="#000000"/>
 
 <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
 <meta name="description" content="{MetaDescription}">
@@ -44,38 +48,16 @@
   font-style: normal;
 }
 
-a.install {
-  -webkit-font-smoothing: antialiased;
-  display: block;
-  font: 600 12px/18px "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
-  color: #FFF;
-  text-decoration: none;
-  background-color: rgba(0,0,0,.38);
-  border: solid 1px rgba(0,0,0,.18);
-  position: absolute;
-  top: 26px;
-  right: 3px;
-  z-index: 1337;
-  height: 18px;
-  padding: 0 5px;
-  cursor: pointer;
-  text-shadow: rgba(0,0,0,.08);
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-}
-a.install:hover {
-  background-color: rgba(0,0,0,.28);
-}
-a.install:active {
-  background-color: rgba(0,0,0,.22);
-}
-
 body, html {
   background-color: black;
   width: 100%;
   height: 100%;
   font-family: "Helvetica Neue","HelveticaNeue",Helvetica,Arial;
+}
+
+.autopagerize_page_element {
+  width: 100%;
+  height: 100%;
 }
 
 .clear {
@@ -115,23 +97,28 @@ body, html {
 }
 
 .title {
-  background: #FF3333;
-  color: white;
   text-align: center;
   height: auto;
   padding: 30px 0;
   font-weight: bold;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
 }
 
 .title h1 {
+  color: {color:Title};
   margin: 0;
-  font-size: 48px;
+  font-size: 32px;
   word-wrap: break-word;
 }
 
+.title a:hover {
+  color: {color:Title Hover};
+}
+
 .title.index-title h1 {
-  font-size: 64px;
+  font-size: 56px;
 }
 
 .title h2 {
@@ -147,12 +134,8 @@ body, html {
 }
 
 .title a {
-  color: #FFF;
+  color: {color:Title};
   text-decoration: none;
-}
-
-.title a:hover {
-  color: black;
 }
 
 a {
@@ -179,19 +162,22 @@ a {
 
 .meta {
   background: #000;
+  background: rgba(0,0,0,0.3);
   color: white;
   text-align: center;
   font-size: 14px;
   font-weight: bold;
-  padding: 15px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.meta:hover {
+  background: rgba(0,0,0,0.8);
 }
 
 .meta a {
   text-decoration: none;
-}
-
-.meta a:hover {
-  color: #FF3333;
 }
 
 .meta ul {
@@ -200,16 +186,30 @@ a {
 }
 
 .meta li {
-  display: inline-block;
-  padding: 0 10px;
+  display: block;
+  text-align: left;
+  padding: .5em 1em;
+  line-height: 2em;
+}
+
+.meta li.more-link {
+  padding: 0;
+  line-height: auto;
+}
+
+.meta li.more-link a {
+  display: block;
+  padding: .1em .55em .25em;
+  font-size: 20px;
 }
 
 .caption {
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.5em;
   font-weight: bold;
   color: #FFF;
   position: absolute;
-  bottom: 5%;
+  bottom: 10px;
   width: 100%;
   display: inline-block;
   text-align: center;
@@ -221,9 +221,9 @@ a {
 
 .caption span {
   display: inline-block;
-  padding: 15px 20px;
+  padding: .5em 1em;
   background: rgba(0,0,0,0.5);
-  margin: 0 10%;
+  margin: 0 20%;
 }
 
 .post {
@@ -231,7 +231,7 @@ a {
 }
 
 nav {
-  background: #333;
+  background: #222;
   color: #FFF;
   font-size: 72px;
   position: relative;
@@ -248,13 +248,12 @@ nav a  {
 
 
 nav a:hover {
-  background-color: #FF5153;
+  background-color: #111;
 }
 
 .back, .forward {
   float: left;
   width: 50%;
-  background: #FF3333;
 }
 
 .forward {
@@ -267,6 +266,13 @@ nav a:hover {
 
 .text, .chat, .answer {
   background: #0BA5E6;
+  height: auto;
+  padding: 20px 0 30px;
+}
+
+.text + .text {
+  background: #0BA5E6;
+  background: rgba(11, 165, 230, 0.9);
   height: auto;
   padding: 20px 0 30px;
 }
@@ -322,7 +328,7 @@ nav a:hover {
 
 
 .photo.post-bg {
-  background-color: #00B2AC;
+  background-color: #000000;
 }
 
 article.photoset:last-child {
@@ -505,7 +511,7 @@ article.photoset:last-child {
 #attribution {
   padding: 10px;
   text-align: center;
-  background: #FF3333;
+  background: black;
   border-top: 1px solid black;
   font-size: 12px;
 }
@@ -529,11 +535,7 @@ article.photoset:last-child {
     word-wrap: normal;
   }
 
-  .caption {
-    font-size: 24px;
-  }
   .title.index-title {
-    height: 50%;
     padding: 0;
   }
 
@@ -569,8 +571,9 @@ article.photoset:last-child {
 
   .post-bg {
     height: 100%;
-    background-size: cover;
+    background-size: contain;
     background-attachment: fixed;
+    background-repeat: repeat;
   }
 
   .quote, .link {
@@ -710,7 +713,9 @@ _gaq.push(['_trackPageview']);
           <h2>{Description}</h2>
         </div>
       </div>
-      <!-- infinite scroll start <div class="autopagerize_page_element"> -->
+      {block:IfInfiniteScrolling}
+      <div class="autopagerize_page_element">
+      {/block:IfInfiniteScrolling}
         {block:Posts}
         <article class="post {TagsAsClasses} 
           {block:Chat}inline{/block:Chat}
@@ -754,7 +759,6 @@ _gaq.push(['_trackPageview']);
           {/block:Audio}
           {block:Photo}
           <div class="photo post-bg" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
-            {LinkOpenTag}{LinkCloseTag}
             {block:Caption}<div class="caption">
               <span>{Caption}</span>
             </div>{/block:Caption}
@@ -774,7 +778,6 @@ _gaq.push(['_trackPageview']);
 
           {block:Panorama}
             <div class="post-bg panorama" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
-              {LinkOpenTag}{LinkCloseTag}
               {block:Caption}<span class="caption"><span>{Caption}</span></span>{/block:Caption} 
             </div>               
           {/block:Panorama}
@@ -802,45 +805,39 @@ _gaq.push(['_trackPageview']);
             </div>
           </div>
           {/block:Answer}
-          {block:IndexPage} 
-          <div class="arrow-up"></div>
-          {/block:IndexPage} 
-        </article>
-        <div class="meta">
+          <div class="meta">
             <ul>
+              {block:IndexPage} 
+                <li class="more-link">
+                  <a href="{Permalink}">+</a>
+                </li>
+              {/block:IndexPage}
+              {block:PermalinkPage}
                 <li>
-                    {block:IndexPage}<a href="{Permalink}" class="permalink">{/block:IndexPage}
-                        {block:Date}
-                        {block:NewDayDate}{ShortMonth} {DayOfMonth}{/block:NewDayDate}
-                        {block:SameDayDate}{ShortMonth} {DayOfMonth}{/block:SameDayDate}
-                        {/block:Date}
-                    {block:IndexPage}</a>{/block:IndexPage}
+                  {block:Date}
+                  {block:NewDayDate}{ShortMonth} {DayOfMonth}{/block:NewDayDate}
+                  {block:SameDayDate}{ShortMonth} {DayOfMonth}{/block:SameDayDate}
+                  {/block:Date}
                 </li>
                 {block:NoteCount} 
                 <li>
-                    {block:IndexPage}<a href="{Permalink}#notes" class="permalink">{/block:IndexPage}
-                        <span aria-hidden="true" class="icon-heart"> {NoteCount}</span>
-                    {block:IndexPage}</a>{/block:IndexPage}
+                  <span aria-hidden="true" class="icon-heart"> {NoteCount}</span>
                 </li>
                 {/block:NoteCount}
-                {block:IfDisqusShortname}
-                {block:IndexPage}
-                <li class="comment-count-0">
-                    <a href="{Permalink}#disqus_thread" class="icon-bubble"> 
-                        0
-                    </a>
-                </li>
-                {/block:IndexPage}
-                {/block:IfDisqusShortname}
+              {/block:PermalinkPage}
             </ul>
-        </div>
+          </div>
+        </article>
         {block:PostNotes}
         <div class="post-notes" id="notes">
             {PostNotes-64}
         </div>
         {/block:PostNotes}
         {/block:Posts}
-      <!-- infinite scroll end </div> -->
+      {block:IfInfiniteScrolling}
+      </div>
+      {/block:IfInfiniteScrolling}
+
       {block:PermalinkPage}
       {block:IfDisqusShortname}
       <div id="disqus_block">
@@ -861,6 +858,7 @@ _gaq.push(['_trackPageview']);
 
       {/block:IfDisqusShortname}
       {/block:PermalinkPage}
+      {block:IfNotInfiniteScrolling}
       {block:Pagination}
       <nav>
           {block:PreviousPage}
@@ -872,6 +870,7 @@ _gaq.push(['_trackPageview']);
           <div class="clear"></div>
       </nav>
       {/block:Pagination}
+      {/block:IfNotInfiniteScrolling}
       {block:PermalinkPagination}
       <nav>
           {block:PreviousPost}
@@ -886,15 +885,15 @@ _gaq.push(['_trackPageview']);
       <div class="clear"></div>
       <div id="attribution">
         <p>
-          <a href="http://fixed-theme.tumblr.com" target="_blank">Fixed.</a> is a <a href="http://tumblr.com" target="_blank">Tumblr</a> theme designed by <a href="http://andrevv.com" target="_blank">Andrew McCarthy</a>
+          All photos by <a href="http://andrevv.com" target="_blank">Andrew McCarthy</a>
         </p>
       </div>
     </div>
 
-    <!-- infinite scroll script 
+    {block:IfInfiniteScrolling}
     <script src="http://static.tumblr.com/exomipi/1Bemmp1m4/infinitescroll.js" type="text/JavaScript"></script>
-    -->
-
+    {/block:IfInfiniteScrolling}
+    {block:IfDisqusShortname}
     <script type="text/javascript">
         var disqus_shortname = '{text:Disqus Shortname}';
 
@@ -905,5 +904,6 @@ _gaq.push(['_trackPageview']);
             (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
         }());
     </script>
+    {/block:IfDisqusShortname}
   </body>
 </html>
