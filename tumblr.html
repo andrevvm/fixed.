@@ -20,11 +20,25 @@
 
 <meta name='text:Disqus Shortname' content='' />
 <meta name="text:Google Analytics ID" content="">
-<meta name="if:Infinite Scrolling" content="0">
 
 <!-- DEFAULT COLORS -->
 <meta name="color:Title" content="#FFFFFF"/>
 <meta name="color:Title Hover" content="#000000"/>
+<meta name="color:Text Post" content="#3e4758"/>
+<meta name="color:Quote Post" content="#ff6b46"/>
+<meta name="color:Chat Post" content="#0ba5e6"/>
+<meta name="color:Link Post" content="#1de7a2"/>
+<meta name="color:Audio Post" content="#9575B2"/>
+<meta name="color:Photo Loading" content="#fd4444"/>
+
+
+<!-- OPTIONS -->
+<meta name="if:Infinite scrolling" content="0">
+<meta name="if:Show captions on index" content="1"/>
+
+<meta name="select:Photos" content="tile" title="Tile">
+<meta name="select:Photos" content="fill" title="Fill screen">
+
 
 <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
 <meta name="description" content="{MetaDescription}">
@@ -53,6 +67,7 @@ body, html {
   width: 100%;
   height: 100%;
   font-family: "Helvetica Neue","HelveticaNeue",Helvetica,Arial;
+  -webkit-font-smoothing: antialiased;
 }
 
 .autopagerize_page_element {
@@ -80,6 +95,38 @@ body, html {
   height: auto;
   margin: 0 auto;
   position: relative;
+  background-color: {Color:Text Post};
+}
+
+.post-text {
+  background-color: {Color:Text Post};
+}
+
+.post-quote {
+  background-color: {Color:Quote Post};
+}
+
+.post-link {
+  background-color: {Color:Link Post};
+}
+
+.post-chat {
+  background-color: {Color:Chat Post};
+}
+
+.post-audio,
+.post-video {
+  background-color: {Color:Audio Post};
+}
+
+
+.post-text + .post-text,
+.post-quote + .post-quote,
+.post-link + .post-link,
+.post-chat + .post-chat,
+.post-audio + .post-audio,
+.post-video + .post-video {
+  border-top: 1px solid rgba(0,0,0,0.1);
 }
 
 .post-bg {
@@ -219,16 +266,18 @@ a {
   margin: 0;
 }
 
-.caption span {
+.caption > span {
   display: inline-block;
   padding: .5em 1em;
   background: rgba(0,0,0,0.5);
   margin: 0 20%;
 }
 
-.post {
-  background-color: #00D9A3;
+{block:IfNotShowCaptionsOnIndex}
+.index-page .caption {
+  display: none;
 }
+{/block:IfNotShowCaptionsOnIndex}
 
 nav {
   background: #222;
@@ -265,14 +314,6 @@ nav a:hover {
    ========================================================================== */
 
 .text, .chat, .answer {
-  background: #0BA5E6;
-  height: auto;
-  padding: 20px 0 30px;
-}
-
-.text + .text {
-  background: #0BA5E6;
-  background: rgba(11, 165, 230, 0.9);
   height: auto;
   padding: 20px 0 30px;
 }
@@ -326,9 +367,8 @@ nav a:hover {
    Photo Posts
    ========================================================================== */
 
-
 .photo.post-bg {
-  background-color: #000000;
+  background-color: {Color:Photo Loading};
 }
 
 article.photoset:last-child {
@@ -411,11 +451,6 @@ article.photoset:last-child {
   opacity: 0.9;
 }
 
-
-.video.post-bg, .audio.post-bg {
-  background-color: #0CE8F0;
-}
-
 .audio.post-bg {
   background-repeat: repeat;
   background-size: auto;
@@ -435,22 +470,17 @@ article.photoset:last-child {
   min-height: 225px;
 }
 
-.video .spotify_audio_player {
+.video .spotify_audio_player,
+.video .bandcamp_audio_player {
   width: 300px;
   height: auto;
   position: relative;
-  top: 20%;
-  padding-top: 30px;
-  padding-bottom: 60px;
 }
 
 .video .soundcloud_audio_player {
   width: 300px;
   height: 165px;
   position: relative;
-  top: 20%;
-  padding-top: 30px;
-  padding-bottom: 60px;
 }
 
 /* ==========================================================================
@@ -508,17 +538,23 @@ article.photoset:last-child {
   min-width: 300px;
 }
 
+/* PLEASE DON'T REMOVE. THIS THEME IS A GIFT FROM ME TO YOU <3 */
+
 #attribution {
   padding: 10px;
   text-align: center;
   background: black;
   border-top: 1px solid black;
-  font-size: 12px;
 }
 
 #attribution p {
   margin: 0;
-  color: #FFF;
+  color: #555;
+  font-size: 12px;
+}
+
+#attribution a {
+  color: #555;
 }
 
 /* ==========================================================================
@@ -531,12 +567,24 @@ article.photoset:last-child {
     height: 100%;
   }
 
+  .title a {
+    opacity: 0.8;
+  }
+
+  .title a:hover {
+    opacity: 1;
+  }
+
   .title h1 {
     word-wrap: normal;
   }
 
   .title.index-title {
     padding: 0;
+  }
+
+  .title.index-title a {
+    opacity: 1;
   }
 
   .title.index-title .title-text {
@@ -576,6 +624,14 @@ article.photoset:last-child {
     background-repeat: repeat;
   }
 
+  .post-bg.tile {
+    background-size: contain;
+  }
+
+  .post-bg.fill {
+    background-size: cover;
+  }
+
   .quote, .link {
     padding: 0;
   }
@@ -593,7 +649,6 @@ article.photoset:last-child {
   }
 
   .text, .chat, .answer {
-    background: #0BA5E6;
     height: auto;
     padding: 80px 0 90px;
   }
@@ -627,16 +682,29 @@ article.photoset:last-child {
     top: 0;
   }
 
+  .video .spotify_audio_player,
+  .video .bandcamp_audio_player,
+  .video .soundcloud_audio_player {
+    -webkit-transform: translate(0,-50%);
+    -moz-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 49%;
+  }
+
+  .video .bandcamp_audio_player {
+    width: 500px;
+    height: auto;
+  }
+
   .video .spotify_audio_player {
-    width: 426px;
-    height: 70%;
-    top: 10%;
+    width: auto;
+    height: 50%;
   }
 
   .video .soundcloud_audio_player {
     width: 80%;
     height: 165px;
-    top: 40%;
   }
 
   #disqus_thread {
@@ -653,7 +721,6 @@ article.photoset:last-child {
        (-o-min-device-pixel-ratio: 5/4),
        (-webkit-min-device-pixel-ratio: 1.25),
        (min-resolution: 120dpi) {
-
 }
 
 /* ==========================================================================
@@ -706,11 +773,13 @@ _gaq.push(['_trackPageview']);
 </head>
   <body>
     {block:IfShowInstallThemeButton}<a href="http://fixed.andrevv.com/" class="install">Install Theme</a>{/block:IfShowInstallThemeButton}
-    <div class="container">
+    <div class="container {block:IndexPage}index-page{/block:IndexPage}">
       <div class="title {block:IndexPage}index-title{/block:IndexPage}">
         <div class="title-text">
           <h1><a href="/">{Title}</a></h1>
+          {block:IndexPage}
           <h2>{Description}</h2>
+          {/block:IndexPage}
         </div>
       </div>
       {block:IfInfiniteScrolling}
@@ -721,7 +790,18 @@ _gaq.push(['_trackPageview']);
           {block:Chat}inline{/block:Chat}
           {block:Text}inline{/block:Text}
           {block:PermalinkPage}single{/block:PermalinkPage}
-          {block:Photoset}photoset{/block:Photoset}">
+          {block:Photoset}photoset{/block:Photoset}
+          {block:Text}post-text{/block:Text}
+          {block:Quote}post-quote{/block:Quote}
+          {block:Link}post-link{/block:Link}
+          {block:Video}post-video{/block:Video}
+          {block:Audio}post-audio{/block:Audio}
+          {block:Photo}post-photo{/block:Photo}
+          {block:Photoset}post-photoset{/block:Photoset}
+          {block:Panorama}post-panorama{/block:Panorama}
+          {block:Chat}post-chat{/block:Chat}
+          {block:Answer}post-answer{/block:Answer}
+          ">
           {block:Text}
           <div class="text post-bg">
             <div class="text-block">
@@ -758,7 +838,7 @@ _gaq.push(['_trackPageview']);
           </div>
           {/block:Audio}
           {block:Photo}
-          <div class="photo post-bg" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
+          <div class="photo post-bg {select:Photos}" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
             {block:Caption}<div class="caption">
               <span>{Caption}</span>
             </div>{/block:Caption}
@@ -768,7 +848,7 @@ _gaq.push(['_trackPageview']);
 
           {block:Photoset}
             {block:Photos}
-            <div class="post-bg" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
+            <div class="post-bg {select:Photos}" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
               {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
             </div>
             </article>
@@ -777,7 +857,7 @@ _gaq.push(['_trackPageview']);
           {/block:Photoset}
 
           {block:Panorama}
-            <div class="post-bg panorama" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
+            <div class="post-bg panorama {select:Photos}" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
               {block:Caption}<span class="caption"><span>{Caption}</span></span>{/block:Caption} 
             </div>               
           {/block:Panorama}
@@ -883,11 +963,17 @@ _gaq.push(['_trackPageview']);
       </nav>
       {/block:PermalinkPagination}
       <div class="clear"></div>
+
+<!-- PLEASE DON'T REMOVE. THIS THEME IS A GIFT FROM ME TO YOU <3 -->
+
       <div id="attribution">
         <p>
-          All photos by <a href="http://andrevv.com" target="_blank">Andrew McCarthy</a>
+          Fixed. theme by <a href="http://andrevv.com" target="_blank">Andrew McCarthy</a>
         </p>
       </div>
+
+<!-- </3 -->
+
     </div>
 
     {block:IfInfiniteScrolling}
