@@ -29,7 +29,6 @@
 <meta name="color:Chat Post" content="#0ba5e6"/>
 <meta name="color:Link Post" content="#1de7a2"/>
 <meta name="color:Audio Post" content="#9575B2"/>
-<meta name="color:Photo Loading" content="#fd4444"/>
 
 
 <!-- OPTIONS -->
@@ -96,7 +95,6 @@
 
 
 body, html {
-  background-color: black;
   width: 100%;
   height: 100%;
   font-family: "Helvetica Neue","HelveticaNeue",Helvetica,Arial;
@@ -151,6 +149,12 @@ body, html {
 .post-audio,
 .post-video {
   background-color: {Color:Audio Post};
+}
+
+.post-photo,
+.post-photoset {
+  background: #474747 url('http://static.tumblr.com/54tapni/B7Amzimp1/loader.gif') center center no-repeat fixed;
+  background-size: 32px;
 }
 
 
@@ -347,9 +351,8 @@ nav a:hover {
    Text / Chat Posts
    ========================================================================== */
 
-.text, .chat, .answer {
-  height: auto;
-  padding: 20px 0 30px;
+.text {
+  padding: 20px 0;
 }
 
 .text {
@@ -373,11 +376,15 @@ nav a:hover {
 
 .conversation {
   margin: 0 auto;
-  padding: 0;
+  padding: 40px 0;
   width: 50%;
   min-width: 300px;
   position: relative;
-  top: 20%;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
   list-style: none;
 }
 
@@ -400,10 +407,6 @@ nav a:hover {
 /* ==========================================================================
    Photo Posts
    ========================================================================== */
-
-.photo.post-bg {
-  background-color: {Color:Photo Loading};
-}
 
 article.photoset:last-child {
   display: none;
@@ -682,8 +685,9 @@ article.photoset:last-child {
     font-size: 20px;
   }
 
-  .text, .chat, .answer {
-    height: auto;
+
+  .text {
+    min-height: auto;
     padding: 80px 0 90px;
   }
 
@@ -789,7 +793,6 @@ _gaq.push(['_trackPageview']);
       {/block:IfInfiniteScrolling}
         {block:Posts}
         <article class="post {TagsAsClasses} 
-          {block:Chat}inline{/block:Chat}
           {block:Text}inline{/block:Text}
           {block:PermalinkPage}single{/block:PermalinkPage}
           {block:Photoset}photoset{/block:Photoset}
