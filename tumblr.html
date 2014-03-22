@@ -33,6 +33,7 @@
 
 <!-- OPTIONS -->
 <meta name="if:Infinite scrolling" content="0">
+<meta name="if:Show description" content="1"/>
 <meta name="if:Show captions on index" content="1"/>
 
 <meta name="select:Photos" content="tile" title="Tile">
@@ -135,6 +136,11 @@ body, html {
   background-color: {Color:Text Post};
 }
 
+.post.post-text {
+  height: auto;
+  min-height: 100%;
+}
+
 .post-quote {
   background-color: {Color:Quote Post};
 }
@@ -181,6 +187,15 @@ body, html {
 .photo, .photoset, .panorama, .audio {
   min-height: 480px;
 }
+
+.post.post-photoset {
+  height: auto;
+}
+
+.post.post-photoset .post-bg {
+  height: 1000px;
+}
+
 
 .title {
   text-align: center;
@@ -354,20 +369,16 @@ nav a:hover {
    ========================================================================== */
 
 .text {
-  padding: 20px 0;
-}
-
-.text {
-  padding: 10px 0 20px;
+  height: 100%;
 }
 
 .text-block {
   font-size: 16px;
   line-height: 1.5em;
   width: 50%;
+  padding: 100px 0;
   margin: 0 auto;
   min-width: 300px;
-  position: relative;
   color: white;
 }
 
@@ -694,7 +705,6 @@ article.photoset:last-child {
 
 
   .text {
-    min-height: auto;
     padding: 80px 0 90px;
   }
 
@@ -791,7 +801,9 @@ _gaq.push(['_trackPageview']);
         <div class="title-text">
           <h1><a href="/">{Title}</a></h1>
           {block:IndexPage}
+          {block:IfShowDescription}
           <h2>{Description}</h2>
+          {/block:IfShowDescription}
           {/block:IndexPage}
         </div>
       </div>
@@ -800,7 +812,6 @@ _gaq.push(['_trackPageview']);
       {/block:IfInfiniteScrolling}
         {block:Posts}
         <article class="post {TagsAsClasses} 
-          {block:Text}inline{/block:Text}
           {block:PermalinkPage}single{/block:PermalinkPage}
           {block:Photoset}photoset{/block:Photoset}
           {block:Text}post-text{/block:Text}
@@ -861,9 +872,8 @@ _gaq.push(['_trackPageview']);
           {block:Photoset}
             {block:Photos}
             <div class="post-bg {select:Photos}" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
-              {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
+              
             </div>
-            </article>
             {/block:Photos}
             {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
           {/block:Photoset}
