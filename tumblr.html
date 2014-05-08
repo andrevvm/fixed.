@@ -390,6 +390,14 @@ nav a:hover {
   left: 0;
   -webkit-transform: translate(-100%, 0);
   -webkit-transition: -webkit-transform 200ms ease-in-out;
+  -moz-transform: translate(-100%, 0);
+  -moz-transition: -moz-transform 200ms ease-in-out;
+  -o-transform: translate(-100%, 0);
+  -o-transition: -o-transform 200ms ease-in-out;
+  -ms-transform: translate(-100%, 0);
+  -ms-transition: -ms-transform 200ms ease-in-out;
+  transform: translate(-100%, 0);
+  transition: transform 200ms ease-in-out;
   width: 300px;
   height: 100%;
   background: black;
@@ -426,6 +434,9 @@ nav a:hover {
   text-decoration: none;
   border-bottom: 1px solid transparent;
   -webkit-transition: border 200ms;
+  -moz-transition: border 200ms;
+  -o-transition: border 200ms;
+  transition: border 200ms;
 }
 
 #menu li a:hover {
@@ -469,6 +480,10 @@ label[for=ShowMenu] span:after {
   height: 2px;
   background: white;
   -webkit-transition: opacity 200ms;
+  -moz-transition: opacity 200ms;
+  -o-transition: opacity 200ms;
+  -ms-transition: opacity 200ms;
+  transition: opacity 200ms;
 }
 
 label[for=ShowMenu] span:before {
@@ -489,6 +504,10 @@ label[for=ShowMenu] span:after {
 
 #ShowMenu:checked ~ #menu {
   -webkit-transform: translate(0%, 0);
+  -moz-transform: translate(0%, 0);
+  -o-transform: translate(0%, 0);
+  -ms-transform: translate(0%, 0);
+  transform: translate(0%, 0);
 }
 
 #ShowMenu:checked ~ label[for=ShowMenu] span:before,
