@@ -24,12 +24,11 @@
 <!-- DEFAULT COLORS -->
 <meta name="color:Title" content="#FFFFFF"/>
 <meta name="color:Title Hover" content="#000000"/>
-<meta name="color:Text Post" content="#3e4758"/>
+<meta name="color:Text Post" content="#2c333f"/>
 <meta name="color:Quote Post" content="#ff6b46"/>
 <meta name="color:Chat Post" content="#0ba5e6"/>
 <meta name="color:Link Post" content="#1de7a2"/>
 <meta name="color:Audio Post" content="#9575B2"/>
-
 
 <!-- OPTIONS -->
 <meta name="if:Infinite scrolling" content="0">
@@ -38,6 +37,7 @@
 
 <meta name="select:Photos" content="tile" title="Tile">
 <meta name="select:Photos" content="fill" title="Fill screen">
+<meta name="select:Photos" content="center" title="Center">
 
 
 <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
@@ -160,7 +160,7 @@ body, html {
 
 .post-photo,
 .post-photoset {
-  background: #474747 url('http://static.tumblr.com/54tapni/B7Amzimp1/loader.gif') center center no-repeat fixed;
+  background: #111 center center no-repeat fixed;
   background-size: 32px;
 }
 
@@ -300,8 +300,12 @@ a {
 
 .meta li.more-link a {
   display: block;
-  padding: .1em .55em .25em;
+  padding: 0;
   font-size: 20px;
+  line-height: 29px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
 }
 
 .caption {
@@ -365,6 +369,134 @@ nav a:hover {
 }
 
 /* ==========================================================================
+   Menu
+   ========================================================================== */
+
+.MenuStuff,
+.MenuStuff ul {
+  display: none;
+}
+
+.Ask,
+.Submit,
+.Pages {
+  display: block !important;
+}
+
+#menu {
+  position: fixed;
+  z-index: 105;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-100%, 0);
+  -webkit-transition: -webkit-transform 200ms ease-in-out;
+  width: 300px;
+  height: 100%;
+  background: black;
+  color: white;
+  overflow: auto;
+}
+
+#menu ul + ul {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+#menu h3 {
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 25px;
+}
+
+#menu ul {
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 10px 20px;
+  padding: 0;
+  list-style: none;
+}
+
+#menu li {
+  margin: 15px 0;
+}
+
+#menu li a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: border 200ms;
+}
+
+#menu li a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid white;
+}
+
+label[for=ShowMenu] {
+  border: 0;
+  background: rgba(0,0,0,0.3);
+  position: fixed;
+  z-index: 110;
+  top: 10px;
+  left: 10px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+label[for=ShowMenu]:hover {
+  background: black;
+}
+
+label[for=ShowMenu] span {
+  display: inline-block;
+  width: 16px;
+  height: 2px;
+  background: white;
+  position: relative;
+  top: 3px;
+}
+
+label[for=ShowMenu] span:before,
+label[for=ShowMenu] span:after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background: white;
+  -webkit-transition: opacity 200ms;
+}
+
+label[for=ShowMenu] span:before {
+  top: -5px;
+  left: 0;
+}
+
+label[for=ShowMenu] span:after {
+  top: 5px;
+  left: 0;
+}
+
+#ShowMenu {
+  position: fixed;
+  left: -1000%;
+  top: 0;
+}
+
+#ShowMenu:checked ~ #menu {
+  -webkit-transform: translate(0%, 0);
+}
+
+#ShowMenu:checked ~ label[for=ShowMenu] span:before,
+#ShowMenu:checked ~ label[for=ShowMenu] span:after {
+  opacity: 0;
+}
+
+/* ==========================================================================
    Text / Chat Posts
    ========================================================================== */
 
@@ -423,12 +555,6 @@ nav a:hover {
 
 article.photoset:last-child {
   display: none;
-}
-
-.photo a, .panorama a {
-  display: block;
-  width: 100%;
-  height: 100%;
 }
 
 /* ==========================================================================
@@ -687,6 +813,11 @@ article.photoset:last-child {
     background-size: cover;
   }
 
+  .post-bg.center {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
   .quote, .link {
     padding: 0;
   }
@@ -898,7 +1029,7 @@ _gaq.push(['_trackPageview']);
           </div>
           {/block:Chat}
           {block:Answer}
-          <div class="answer post-bg">
+          <div class="answer text post-bg">
             <div class="text-block">
               <img class="answer-avatar" src="{AskerPortraitURL-40}" />
               {Asker}
@@ -907,14 +1038,19 @@ _gaq.push(['_trackPageview']);
             </div>
           </div>
           {/block:Answer}
-          <div class="meta">
-            <ul>
-              {block:IndexPage} 
+          
+          {block:IndexPage}
+            <div class="meta">
+              <ul>
                 <li class="more-link">
                   <a href="{Permalink}">+</a>
                 </li>
-              {/block:IndexPage}
-              {block:PermalinkPage}
+              </ul>
+            </div>
+          {/block:IndexPage}
+          {block:PermalinkPage}
+            <div class="meta">
+              <ul>
                 <li>
                   {block:Date}
                   {block:NewDayDate}{ShortMonth} {DayOfMonth}{/block:NewDayDate}
@@ -926,9 +1062,10 @@ _gaq.push(['_trackPageview']);
                   <span aria-hidden="true" class="icon-heart"></span> {NoteCount}
                 </li>
                 {/block:NoteCount}
-              {/block:PermalinkPage}
-            </ul>
-          </div>
+              </ul>
+            </div>
+          {/block:PermalinkPage}
+
         </article>
         {/block:Posts}
       {block:IfInfiniteScrolling}
@@ -1017,5 +1154,33 @@ _gaq.push(['_trackPageview']);
         }());
     </script>
     {/block:IfDisqusShortname}
+    <div class="MenuStuff
+      {block:AskEnabled}Ask{/block:AskEnabled}
+      {block:SubmissionsEnabled}Submit{/block:SubmissionsEnabled}
+      {block:HasPages}Pages{/block:HasPages}
+    ">
+      <input type="checkbox" id="ShowMenu" />
+      <div id="menu">
+        <h3>Menu</h3>
+        <ul class="{block:AskEnabled}Ask{/block:AskEnabled} {block:SubmissionsEnabled}Submit{/block:SubmissionsEnabled}">
+          {block:AskEnabled}
+            <li><a href="/ask">{AskLabel}</a></li>
+          {/block:AskEnabled}
+          {block:SubmissionsEnabled} 
+            <li><a href="/submit">{SubmitLabel}</a></li>
+          {/block:SubmissionsEnabled}
+        </ul>
+        {block:HasPages}
+          <ul class="Pages">
+            {block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+          </ul>
+        {/block:HasPages}
+
+
+      </div>
+      <label for="ShowMenu">
+        <span></span>
+      </label>
+    </div>
   </body>
 </html>
