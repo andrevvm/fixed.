@@ -10,11 +10,11 @@
   Fixed. Tumblr Theme
   http://fixed.andrevv.com/
 
-  Copyright (c) 2013 Andrew McCarthy.
+  Copyright (c) Andrew McCarthy.
   Please do not re-use code without permission.
   http://andrevv.com/
 
-  Version 1.10.00
+  Version 1.20.00
 
 -->
 
@@ -66,9 +66,10 @@ body, html {
   background: black;
 }
 
-.autopagerize_page_element {
+.posts {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .clear {
@@ -139,31 +140,29 @@ body, html {
 .post-bg {
   width: 100%;
   height: auto;
+  min-height: 100vh;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  position: relative;
-}
-
-.photo, .photoset, .panorama, .audio {
-  min-height: 480px;
+  display: box;
+  display: flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 .photo > a,
 .photoset > a,
 .panorama > a {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .post.post-photoset {
   height: auto;
-}
-
-.post.post-photoset .post-bg {
-  height: 1000px;
 }
 
 
@@ -313,6 +312,10 @@ nav {
   font-size: 72px;
   position: relative;
   width: 100%;
+}
+
+.infinite-scrolling.index-page nav.pages-nav {
+  display: block;
 }
 
 nav a  {
@@ -497,8 +500,8 @@ label[for=ShowMenu] span:after {
   font-size: 16px;
   line-height: 1.5em;
   width: 50%;
-  padding: 100px 0;
-  margin: 0 auto;
+  padding: 50px 0;
+  margin: auto;
   min-width: 300px;
   color: white;
 }
@@ -514,11 +517,7 @@ label[for=ShowMenu] span:after {
   width: 50%;
   min-width: 300px;
   position: relative;
-  top: 49.5%;
-  -webkit-transform: translate(0,-50%);
-  -moz-transform: translate(0,-50%);
-  -ms-transform: translate(0,-50%);
-  transform: translate(0,-50%);
+  margin: auto;
   list-style: none;
 }
 
@@ -545,9 +544,8 @@ label[for=ShowMenu] span:after {
 
 
 .link h3 {
-  margin: 0 auto;
+  margin: auto;
   position: relative;
-  top: 40%;
   font-size: 24px;
   text-align: center;
   color: #FFF;
@@ -569,12 +567,8 @@ label[for=ShowMenu] span:after {
 .quote .quote-text {
   text-align: center;
   position: relative;
-  -webkit-transform: translate(0,-50%);
-  -moz-transform: translate(0,-50%);
-  -ms-transform: translate(0,-50%);
-  transform: translate(0,-50%);
-  top: 49.5%;
-  margin: 0 5%;
+  margin: auto;
+  padding: 0 20%;
 }
 
 .quote blockquote {
@@ -584,7 +578,8 @@ label[for=ShowMenu] span:after {
   color: white;
 }
 
-.quote .source {
+.quote .source,
+.quote .source ~ p {
   color: #FFF;
   opacity: 0.75;
   font-size: 16px;
@@ -602,7 +597,7 @@ label[for=ShowMenu] span:after {
 
 .audio_player {
   width: 240px;
-  margin: 0 auto;
+  margin: auto;
   height: 100px;
 }
 
@@ -610,7 +605,7 @@ label[for=ShowMenu] span:after {
   width: 240px;
   height: 100px;
   position: relative;
-  top: 180px;
+  margin: auto;
   opacity: 0.9;
 }
 
@@ -619,30 +614,31 @@ label[for=ShowMenu] span:after {
   background-size: auto;
 }
 
+.audio.post-bg > span {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  display: box;
+  display: flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
 .video iframe {
   display: block;
   width: 320px;
   height: 225px;
   min-width: 300px;
-  margin: 0 auto;
+  margin: auto;
   position: relative;
-  top: 10%;
-}
-
-.video {
-  min-height: 225px;
 }
 
 .video .spotify_audio_player,
 .video .bandcamp_audio_player {
   width: 300px;
   height: auto;
-  position: relative;
-}
-
-.video .soundcloud_audio_player {
-  width: 300px;
-  height: 165px;
   position: relative;
 }
 
@@ -726,8 +722,8 @@ label[for=ShowMenu] span:after {
 
 @media only screen and (min-device-width: 1025px) {
   .container {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
   }
 
   .title a {
@@ -765,13 +761,9 @@ label[for=ShowMenu] span:after {
     padding: 30px 0;
   }
 
-  .autopagerize_page_element {
-    position: relative;
-  }
-
   .post {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     min-height: 480px;
   }
 
@@ -781,7 +773,6 @@ label[for=ShowMenu] span:after {
   }
 
   .post-bg {
-    height: 100%;
     background-size: contain;
     background-attachment: fixed;
     background-repeat: repeat;
@@ -817,11 +808,6 @@ label[for=ShowMenu] span:after {
   }
 
 
-  .text {
-    padding: 80px 0 90px;
-  }
-
-
   .text-block {
     font-size: 20px;
     width: 600px;
@@ -829,14 +815,14 @@ label[for=ShowMenu] span:after {
 
 
   .audio_player {
-    width: 30%;
-    margin: 0 auto;
-    height: 100%;
+    width: 30vw;
+    margin: auto;
+    height: 125px;
   }
 
   .tumblr_audio_player {
     width: 100%;
-    height: 20%;
+    height: 100%;
     position: relative;
     top: 40%;
     -webkit-transform: translate(0,0) !important;
@@ -844,8 +830,8 @@ label[for=ShowMenu] span:after {
 
   .video iframe {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
     position: relative;
     top: 0;
@@ -854,11 +840,7 @@ label[for=ShowMenu] span:after {
   .video .spotify_audio_player,
   .video .bandcamp_audio_player,
   .video .soundcloud_audio_player {
-    -webkit-transform: translate(0,-50%);
-    -moz-transform: translate(0,-50%);
-    -ms-transform: translate(0,-50%);
-    transform: translate(0,-50%);
-    top: 49.5%;
+    margin: auto;
   }
 
   .video .bandcamp_audio_player {
@@ -869,11 +851,6 @@ label[for=ShowMenu] span:after {
   .video .spotify_audio_player {
     width: auto;
     height: 50%;
-  }
-
-  .video .soundcloud_audio_player {
-    width: 80%;
-    height: 165px;
   }
 
   #disqus_thread {
@@ -910,7 +887,7 @@ _gaq.push(['_trackPageview']);
 </head>
   <body>
     {block:IfShowInstallThemeButton}<a href="http://fixed.andrevv.com/" class="install">Install Theme</a>{/block:IfShowInstallThemeButton}
-    <div class="container {block:IndexPage}index-page{/block:IndexPage}">
+    <div class="container {block:IndexPage}index-page{/block:IndexPage} {block:IfInfiniteScrolling}infinite-scrolling{/block:IfInfiniteScrolling}">
       <div class="title {block:IndexPage}index-title{/block:IndexPage}">
         <div class="title-text">
           <h1><a href="/">{Title}</a></h1>
@@ -921,8 +898,11 @@ _gaq.push(['_trackPageview']);
           {/block:IndexPage}
         </div>
       </div>
+
       {block:IfInfiniteScrolling}
-      <div class="autopagerize_page_element">
+      {block:IndexPage}
+      <div class="posts">
+      {/block:IndexPage}
       {/block:IfInfiniteScrolling}
         {block:Posts}
         <article class="post {TagsAsClasses} 
@@ -958,46 +938,46 @@ _gaq.push(['_trackPageview']);
           {block:Link}
           <div class="link post-bg">
             <h3><i class="fa fa-link"></i> <a href="{URL}" {Target}>{Name}</a></h3>
-            {block:Description}<div class="caption"><span>{Description}</span></div>{/block:Description}
           </div>
+          {block:Description}<div class="caption"><span>{Description}</span></div>{/block:Description}
           {/block:Link}
           {block:Video}
           <div class="video post-bg">
             {Video-700}
-            {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
           </div>
+          {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
           {/block:Video}
           {block:Audio}
           <div class="audio post-bg" {block:AlbumArt}style="background-image: url({AlbumArtURL})"{/block:AlbumArt}>                   
             {AudioPlayerBlack}
-            {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
           </div>
+          {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
           {/block:Audio}
           {block:Photo}
           <div class="photo post-bg {select:Photos}" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
             {LinkOpenTag}{LinkCloseTag}
+
+          </div>
             {block:Caption}<div class="caption">
               <span>{Caption}</span>
             </div>{/block:Caption}
-
-          </div>
           {/block:Photo}
 
           {block:Photoset}
-            {LinkOpenTag}{LinkCloseTag}
             {block:Photos}
             <div class="photoset post-bg {select:Photos}" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
-              {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
+              {LinkOpenTag}{LinkCloseTag}
             </div>
+            {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
             {/block:Photos}
             {block:Caption}<div class="caption"><span>{Caption}</span></div>{/block:Caption}
           {/block:Photoset}
 
           {block:Panorama}
             <div class="post-bg panorama {select:Photos}" style="background-image:url({PhotoURL-HighRes})" alt="{PhotoAlt}">
-              {LinkOpenTag}{LinkCloseTag}
-              {block:Caption}<span class="caption"><span>{Caption}</span></span>{/block:Caption} 
-            </div>               
+              {LinkOpenTag}{LinkCloseTag} 
+            </div>    
+            {block:Caption}<span class="caption"><span>{Caption}</span></span>{/block:Caption}           
           {/block:Panorama}
 
           {block:Chat}
@@ -1053,79 +1033,100 @@ _gaq.push(['_trackPageview']);
 
         </article>
         {/block:Posts}
+      
+
+        {block:Pagination}
+        <nav class="pages-nav">
+            {block:PreviousPage}
+            <a href="{PreviousPage}" class="back">
+                <span class="arrow">&larr;</span>
+            </a>{/block:PreviousPage}{block:NextPage}<a href="{NextPage}" class="forward">
+                <span class="arrow">&rarr;</span>
+            </a>{/block:NextPage}
+            <div class="clear"></div>
+        </nav>
+        {/block:Pagination}
+        {block:PermalinkPagination}
+        <nav>
+            {block:PreviousPost}
+            <a href="{PreviousPost}" class="forward">
+                <span class="arrow">&rarr;</span>
+            </a>{/block:PreviousPost}{block:NextPost}<a href="{NextPost}" class="back">
+                <span class="arrow">&larr;</span>
+            </a>{/block:NextPost}
+            <div class="clear"></div>
+        </nav>
+        {/block:PermalinkPagination}
+
+        {block:PermalinkPage}
+
+        {block:PostNotes}
+        <div class="post-notes" id="notes">
+            {PostNotes-64}
+        </div>
+        {/block:PostNotes}
+
+        {block:IfDisqusShortname}
+        <div id="disqus_block">
+            <div id="disqus_thread"></div>
+        </div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        {/block:IfDisqusShortname}
+        {/block:PermalinkPage}
+        
+        <div class="clear"></div>
+
       {block:IfInfiniteScrolling}
+      {block:IndexPage}
       </div>
+      {/block:IndexPage}
       {/block:IfInfiniteScrolling}
 
-      {block:IfNotInfiniteScrolling}
-      {block:Pagination}
-      <nav>
-          {block:PreviousPage}
-          <a href="{PreviousPage}" class="back">
-              <span class="arrow">&larr;</span>
-          </a>{/block:PreviousPage}{block:NextPage}<a href="{NextPage}" class="forward">
-              <span class="arrow">&rarr;</span>
-          </a>{/block:NextPage}
-          <div class="clear"></div>
-      </nav>
-      {/block:Pagination}
-      {/block:IfNotInfiniteScrolling}
-      {block:PermalinkPagination}
-      <nav>
-          {block:PreviousPost}
-          <a href="{PreviousPost}" class="forward">
-              <span class="arrow">&rarr;</span>
-          </a>{/block:PreviousPost}{block:NextPost}<a href="{NextPost}" class="back">
-              <span class="arrow">&larr;</span>
-          </a>{/block:NextPost}
-          <div class="clear"></div>
-      </nav>
-      {/block:PermalinkPagination}
+      <!-- PLEASE DON'T REMOVE. THIS THEME IS A GIFT FROM ME TO YOU <3 -->
 
-      {block:PermalinkPage}
+        <div id="attribution">
+          <p>
+            <a href="http://fixed.andrevv.com/">Fixed. theme</a> by <a href="http://andrevv.com" target="_blank">Andrew McCarthy</a>
+          </p>
+        </div>
 
-      {block:PostNotes}
-      <div class="post-notes" id="notes">
-          {PostNotes-64}
-      </div>
-      {/block:PostNotes}
-
-      {block:IfDisqusShortname}
-      <div id="disqus_block">
-          <div id="disqus_thread"></div>
-      </div>
-      <script type="text/javascript">
-          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-          var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace example with your forum shortname
-
-          /* * * DON'T EDIT BELOW THIS LINE * * */
-          (function() {
-              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-      {/block:IfDisqusShortname}
-      {/block:PermalinkPage}
-      
-      <div class="clear"></div>
-
-<!-- PLEASE DON'T REMOVE. THIS THEME IS A GIFT FROM ME TO YOU <3 -->
-
-      <div id="attribution">
-        <p>
-          <a href="http://fixed.andrevv.com/">Fixed. theme</a> by <a href="http://andrevv.com" target="_blank">Andrew McCarthy</a>
-        </p>
-      </div>
-
-<!-- </3 -->
+      <!-- </3 -->
 
     </div>
 
     {block:IfInfiniteScrolling}
-    <script src="http://static.tumblr.com/exomipi/1Bemmp1m4/infinitescroll.js" type="text/JavaScript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/JavaScript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-infinitescroll/2.0b2.120519/jquery.infinitescroll.min.js" type="text/JavaScript"></script>
+    <script type="text/javascript">
+      $('.posts').infinitescroll({
+
+        loading: {
+          speed: 'slow',
+          img: false,
+          msgText: 'Loading'
+        },
+
+        navSelector  : "nav.pages-nav",            
+                   // selector for the paged navigation (it will be hidden)
+        nextSelector : "nav.pages-nav .forward",    
+                       // selector for the NEXT link (to page 2)
+        itemSelector : "article.post",
+        bufferPx: 1500
+
+      });
+    </script>
     {/block:IfInfiniteScrolling}
     {block:IfDisqusShortname}
     <script type="text/javascript">
