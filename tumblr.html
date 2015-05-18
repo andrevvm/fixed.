@@ -768,6 +768,57 @@ label[for=ShowMenu] span:after {
   color: #555;
 }
 
+a.install {
+  position: fixed;
+  top: 30px;
+  right: 3px;
+  white-space: nowrap;
+  outline: 0;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: 600 12px/18px "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+  height: 20px;
+  padding: 0 5px;
+  line-height: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition-property: padding;
+  -moz-transition-property: padding;
+  -ms-transition-property: padding;
+  -o-transition-property: padding;
+  transition-property: padding;
+  -webkit-transition-duration: .1s;
+  -moz-transition-duration: .1s;
+  -ms-transition-duration: .1s;
+  -o-transition-duration: .1s;
+  transition-duration: .1s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -ms-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.18);
+  background: #3e3e3e;
+  background: rgba(0,0,0,0.38);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.08);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  color: #fff;
+  z-index: 104;
+
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -938,7 +989,7 @@ _gaq.push(['_trackPageview']);
 </script>{/block:IfGoogleAnalyticsID}
 </head>
   <body>
-    {block:IfShowInstallThemeButton}<a href="http://fixed.andrevv.com/" class="install">Install Theme</a>{/block:IfShowInstallThemeButton}
+    <a href="http://fixed.andrevv.com" target="_blank" class="install"><i class="fa-arrow-circle-down fa"></i> Install theme</a>
     <div class="container {block:IndexPage}index-page{/block:IndexPage} {block:IfInfiniteScrolling}infinite-scrolling{/block:IfInfiniteScrolling}">
       <div class="title {block:IndexPage}index-title{/block:IndexPage}">
         <div class="title-text">
